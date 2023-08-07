@@ -1,0 +1,87 @@
+{
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "slug"
+      }
+    },
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "title"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": null,
+        "choices": {
+          "image": {
+            "type": "Slice",
+            "fieldset": "Image",
+            "description": "Image",
+            "icon": "add_box",
+            "display": "list",
+            "non-repeat": {
+              "image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image"
+                }
+              },
+              "image_caption": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "Image Caption"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  },
+  "Project Page Content": {
+    "body1": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": null,
+        "choices": {
+          "project_page_image": {
+            "type": "Slice",
+            "fieldset": "Project Page Image",
+            "description": "Project Page Image",
+            "icon": "add_box",
+            "display": "list",
+            "non-repeat": {
+              "project_page_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Project Page Image"
+                }
+              },
+              "project_page_image_caption": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "Project Page Image Caption"
+                }
+              }
+            },
+            "repeat": {}
+          }
+        }
+      }
+    }
+  }
+}

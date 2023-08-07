@@ -1,0 +1,1 @@
+[{"path":["project","uid"],"type":"String"},{"path":["project","alternate_languages"],"type":"AlternateLanguages"},{"path":["project","data"],"type":"PrismicProjectDataType"},{"path":["project","data","title"],"type":"PrismicStructuredTextType"},{"path":["project"],"type":"PrismicProject"}]
