@@ -39,24 +39,41 @@ export const query = graphql`
       data {
         title {
           text
+          html
         }
-        body1 {
-          ... on PrismicProjectBody1ProjectPageImage {
-            id
-            slice_type
-            slice_label
-            primary {
-              project_page_image {
-                fluid {
-                  src
-                }
-              }
-              project_page_image_caption {
-                text
-              }
-            }
-          }
+        about {
+          html
+          text
         }
+        client {
+          html
+          text
+        }
+        agency {
+          html
+          text
+        }
+        team {
+          html
+          text
+        }
+        # body1 {
+        #   ... on PrismicProjectBody1ProjectPageImage {
+        #     id
+        #     slice_type
+        #     slice_label
+        #     primary {
+        #       project_page_image {
+        #         fluid {
+        #           src
+        #         }
+        #       }
+        #       project_page_image_caption {
+        #         text
+        #       }
+        #     }
+        #   }
+        # }
         # categories {
         #   category {
         #     document {

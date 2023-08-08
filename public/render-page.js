@@ -159,32 +159,77 @@ var plugins = [{
               "label": "title"
             }
           },
+          "client": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "client"
+            }
+          },
+          "team": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph,hyperlink",
+              "label": "team"
+            }
+          },
+          "agency": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Agency"
+            }
+          },
+          "about": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "About"
+            }
+          },
           "body": {
             "type": "Slices",
             "fieldset": "Slice zone",
             "config": {
               "labels": null,
               "choices": {
-                "image": {
+                "4ximg": {
                   "type": "Slice",
-                  "fieldset": "Image",
-                  "description": "Image",
-                  "icon": "add_box",
+                  "fieldset": "4xImg",
+                  "description": "Img Row of 4",
+                  "icon": "add_circle",
                   "display": "list",
                   "non-repeat": {
-                    "image": {
+                    "img1": {
                       "type": "Image",
                       "config": {
                         "constraint": {},
                         "thumbnails": [],
-                        "label": "Image"
+                        "label": "img1"
                       }
                     },
-                    "image_caption": {
-                      "type": "StructuredText",
+                    "img2": {
+                      "type": "Image",
                       "config": {
-                        "single": "paragraph",
-                        "label": "Image Caption"
+                        "constraint": {},
+                        "thumbnails": [],
+                        "label": "img2"
+                      }
+                    },
+                    "img3": {
+                      "type": "Image",
+                      "config": {
+                        "constraint": {},
+                        "thumbnails": [],
+                        "label": "img3"
+                      }
+                    },
+                    "img4": {
+                      "type": "Image",
+                      "config": {
+                        "constraint": {},
+                        "thumbnails": [],
+                        "label": "img4"
                       }
                     }
                   },
@@ -193,40 +238,36 @@ var plugins = [{
               }
             }
           }
-        },
-        "Project Page Content": {
-          "body1": {
-            "type": "Slices",
-            "fieldset": "Slice zone",
+        }
+      },
+      "about": {
+        "Main": {
+          "email": {
+            "type": "StructuredText",
             "config": {
-              "labels": null,
-              "choices": {
-                "project_page_image": {
-                  "type": "Slice",
-                  "fieldset": "Project Page Image",
-                  "description": "Project Page Image",
-                  "icon": "add_box",
-                  "display": "list",
-                  "non-repeat": {
-                    "project_page_image": {
-                      "type": "Image",
-                      "config": {
-                        "constraint": {},
-                        "thumbnails": [],
-                        "label": "Project Page Image"
-                      }
-                    },
-                    "project_page_image_caption": {
-                      "type": "StructuredText",
-                      "config": {
-                        "single": "paragraph",
-                        "label": "Project Page Image Caption"
-                      }
-                    }
-                  },
-                  "repeat": {}
-                }
-              }
+              "single": "paragraph",
+              "label": "Email"
+            }
+          },
+          "phone": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Phone"
+            }
+          },
+          "web": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "Web"
+            }
+          },
+          "address": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "Address"
             }
           }
         }
