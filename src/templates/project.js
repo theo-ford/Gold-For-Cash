@@ -9,25 +9,7 @@ import ReactPlayer from "react-player";
 import { VideoComponentNoControls } from "../components/tf/video-component-no-controls";
 import { useMediaQuery } from "../components/tf/media-query";
 
-const Project = ({ data }) => {
-  const content = data.prismicProject.data.body1.map((content, index) => {
-    console.log(content.slice_type);
-    if (content.slice_type == "project_page_image") {
-      return (
-        <>
-          <img src={content.primary.project_page_image.fluid.src} />
-          <p>{content.primary.project_page_image_caption.text}</p>
-        </>
-      );
-    }
-  });
-  return (
-    <>
-      <p>{data.prismicProject.data.title.text}</p>
-      {content}
-    </>
-  );
-};
+const Project = ({ data }) => {};
 
 export default withPreview(Project);
 
