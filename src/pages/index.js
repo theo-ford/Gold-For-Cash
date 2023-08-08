@@ -166,7 +166,6 @@ const Index = ({ data }) => {
   const contents = data.prismicHomepage.data.project_relationship_group.map(
     (content, index) => {
       if (content.project_relationship_field.document.type == "project") {
-        // console.log(content.project_relationship_field.document.type);
         const handleClickScroll = () => {
           var element = document.getElementById(
             `${content.project_relationship_field.document.uid}`
@@ -192,13 +191,9 @@ const Index = ({ data }) => {
     (content, index) => {
       if (content.project_relationship_field.document.type == "project") {
         console.log(content.project_relationship_field.document.type);
-        // return (
-        //   <p>{content.project_relationship_field.document.data.title.text}</p>
-        // );
         const project = content.project_relationship_field.document.data.body.map(
           (content_four, index) => {
             console.log(content_four.slice_type);
-            // return <p>testing</p>;
             if (content_four.slice_type == "4ximg") {
               return (
                 <FourImgCon>
@@ -239,7 +234,6 @@ const Index = ({ data }) => {
         );
         return (
           <div id={content.project_relationship_field.document.uid}>
-            {/* <div> */}
             <ProjectInfoCon>
               <Grid16>
                 <Col1>

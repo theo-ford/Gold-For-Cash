@@ -9,7 +9,9 @@ import ReactPlayer from "react-player";
 import { VideoComponentNoControls } from "../components/tf/video-component-no-controls";
 import { useMediaQuery } from "../components/tf/media-query";
 
-const Project = ({ data }) => {};
+const Project = ({ data }) => {
+  return <p>testing</p>;
+};
 
 export default withPreview(Project);
 
@@ -39,53 +41,6 @@ export const query = graphql`
           html
           text
         }
-        # body1 {
-        #   ... on PrismicProjectBody1ProjectPageImage {
-        #     id
-        #     slice_type
-        #     slice_label
-        #     primary {
-        #       project_page_image {
-        #         fluid {
-        #           src
-        #         }
-        #       }
-        #       project_page_image_caption {
-        #         text
-        #       }
-        #     }
-        #   }
-        # }
-        # categories {
-        #   category {
-        #     document {
-        #       ... on PrismicCategory {
-        #         id
-        #         data {
-        #           name
-        #         }
-        #       }
-        #     }
-        #   }
-        # }
-        # body {
-        #   ... on PrismicProjectBodyCol8 {
-        #     id
-        #     slice_type
-        #     primary {
-        #       img {
-        #         fluid(srcSetBreakpoints: [1400, 1600, 2400, 3600]) {
-        #           srcSetWebp
-        #           srcWebp
-        #         }
-        #       }
-        #       caption {
-        #         html
-        #         text
-        #       }
-        #     }
-        #   }
-        # }
       }
     }
   }
