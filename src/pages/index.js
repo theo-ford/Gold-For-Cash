@@ -140,6 +140,8 @@ const ContentsCon = styled.div`
 const ProjectInfoCon = styled.div`
   width: calc(100% - 20px);
   margin-left: 10px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 `;
 const Col1 = styled.div`
   grid-column: span 4;
@@ -154,6 +156,8 @@ const Col3 = styled.div`
 const FourImgCon = styled.div`
   width: calc(100% - 20px);
   margin-left: 10px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 `;
 const FourImgImgCon = styled.div`
   grid-column: span 4;
@@ -164,6 +168,8 @@ const FourImgImgCon = styled.div`
 const TwoImgCon = styled.div`
   width: calc(100% - 20px);
   margin-left: 10px;
+  margin-top: 100px;
+  margin-bottom: 100px;
 `;
 const TwoImgImgCon = styled.div`
   grid-column: span 8;
@@ -219,6 +225,9 @@ const Index = ({ data }) => {
                       ) : (
                         ""
                       )}
+                      <DecimaPCon>
+                        <p>{content_four.primary.img1_caption.text}</p>
+                      </DecimaPCon>
                     </FourImgImgCon>
                     <FourImgImgCon>
                       {content_four.primary.img2.fluid != null ? (
@@ -226,6 +235,9 @@ const Index = ({ data }) => {
                       ) : (
                         ""
                       )}
+                      <DecimaPCon>
+                        <p>{content_four.primary.img2_caption.text}</p>
+                      </DecimaPCon>
                     </FourImgImgCon>
                     <FourImgImgCon>
                       {content_four.primary.img3.fluid != null ? (
@@ -233,6 +245,9 @@ const Index = ({ data }) => {
                       ) : (
                         ""
                       )}
+                      <DecimaPCon>
+                        <p>{content_four.primary.img3_caption.text}</p>
+                      </DecimaPCon>
                     </FourImgImgCon>
                     <FourImgImgCon>
                       {content_four.primary.img4.fluid != null ? (
@@ -240,6 +255,9 @@ const Index = ({ data }) => {
                       ) : (
                         ""
                       )}
+                      <DecimaPCon>
+                        <p>{content_four.primary.img4_caption.text}</p>
+                      </DecimaPCon>
                     </FourImgImgCon>
                   </Grid16>
                 </FourImgCon>
@@ -255,6 +273,9 @@ const Index = ({ data }) => {
                       ) : (
                         ""
                       )}
+                      <DecimaPCon>
+                        <p>{content_four.primary.img1_caption.text}</p>
+                      </DecimaPCon>
                     </TwoImgImgCon>
                     <TwoImgImgCon>
                       {content_four.primary.img2.fluid != null ? (
@@ -262,6 +283,9 @@ const Index = ({ data }) => {
                       ) : (
                         ""
                       )}
+                      <DecimaPCon>
+                        <p>{content_four.primary.img2_caption.text}</p>
+                      </DecimaPCon>
                     </TwoImgImgCon>
                   </Grid16>
                 </TwoImgCon>
@@ -478,20 +502,36 @@ export const query = graphql`
                             src
                           }
                         }
+                        img1_caption {
+                          html
+                          text
+                        }
                         img2 {
                           fluid {
                             src
                           }
+                        }
+                        img2_caption {
+                          html
+                          text
                         }
                         img3 {
                           fluid {
                             src
                           }
                         }
+                        img3_caption {
+                          html
+                          text
+                        }
                         img4 {
                           fluid {
                             src
                           }
+                        }
+                        img4_caption {
+                          html
+                          text
                         }
                       }
                     }
@@ -504,10 +544,18 @@ export const query = graphql`
                             src
                           }
                         }
+                        img1_caption {
+                          html
+                          text
+                        }
                         img2 {
                           fluid {
                             src
                           }
+                        }
+                        img2_caption {
+                          html
+                          text
                         }
                       }
                     }
