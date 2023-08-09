@@ -19,6 +19,10 @@ const Grid16 = styled.div`
   grid-template-columns: 1fr 1fr 1fr 1fr /* 4 */ 1fr 1fr 1fr 1fr /* 8 */ 1fr 1fr 1fr 1fr /* 12 */ 1fr 1fr 1fr 1fr /* 16 */;
   /* width: calc(100% - 20px); */
   grid-column-gap: 10px;
+
+  @media (max-width: 666px) {
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+  }
 `;
 
 const LogoCon = styled.div`
@@ -28,11 +32,17 @@ const LogoCon = styled.div`
   img {
     width: 100%;
   }
+  @media (max-width: 666px) {
+    width: 50%;
+  }
 `;
 const IntroCon = styled.div`
   position: fixed;
   margin: 10px;
   width: calc(100% - 20px);
+  @media (max-width: 666px) {
+    display: none;
+  }
 `;
 const ClientsCon = styled.div`
   grid-column: 9 / span 2;
@@ -40,12 +50,7 @@ const ClientsCon = styled.div`
 const AboutCon = styled.div`
   grid-column: span 6;
 `;
-const Img1 = styled.img`
-  width: 500px;
-`;
-const Font = styled.p`
-  font-family: "DecimaMonoPro";
-`;
+
 const SmallAboutP = styled.p`
   font-family: "DecimaMonoPro";
   font-size: 6px;
@@ -84,9 +89,15 @@ const NavCon = styled.div`
 `;
 const ContactTitleCon = styled.div`
   grid-column: span 1;
+  @media (max-width: 666px) {
+    display: none;
+  }
 `;
 const ContactInfoCon = styled.div`
   grid-column: span 2;
+  @media (max-width: 666px) {
+    display: none;
+  }
 `;
 const DecimaP = styled.div`
   font-family: "DecimaMonoPro";
@@ -95,9 +106,15 @@ const DecimaP = styled.div`
 `;
 const AddressTitleCon = styled.div`
   grid-column: span 1;
+  @media (max-width: 666px) {
+    display: none;
+  }
 `;
 const AddressCon = styled.div`
   grid-column: span 2;
+  @media (max-width: 666px) {
+    display: none;
+  }
 `;
 const DecimaPCon = styled.div`
   p {
@@ -108,12 +125,21 @@ const DecimaPCon = styled.div`
 `;
 const SocialsTitleCon = styled.div`
   grid-column: span 1;
+  @media (max-width: 666px) {
+    display: none;
+  }
 `;
 const SocialsLinksCon = styled.div`
   grid-column: span 1;
+  @media (max-width: 666px) {
+    display: none;
+  }
 `;
 const PageLinksCon = styled.div`
   grid-column: span 4;
+  @media (max-width: 666px) {
+    grid-column: 3 / span 2;
+  }
 `;
 const PageLinks = styled.p`
   font-family: "Linotype Univers 530 Medium";
@@ -122,15 +148,33 @@ const PageLinks = styled.p`
   letter-spacing: -2%;
   line-height: 112.5%;
 `;
+const HelveticaLrgCon = styled.div`
+  p {
+    font-family: "Linotype Univers 530 Medium";
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: -2%;
+    line-height: 112.5%;
+  }
+`;
 const CodeCon = styled.div`
   grid-column: span 2;
+  @media (max-width: 666px) {
+    display: none;
+  }
 `;
 const GMTCon = styled.div`
   grid-column: span 1;
+  @media (max-width: 666px) {
+    display: none;
+  }
 `;
 
 const ESTCon = styled.div`
   grid-column: span 1;
+  @media (max-width: 666px) {
+    display: none;
+  }
 `;
 const ContentsCon = styled.div`
   margin-bottom: 200px;
@@ -145,24 +189,45 @@ const ProjectInfoCon = styled.div`
 `;
 const Col1 = styled.div`
   grid-column: span 4;
+  @media (max-width: 666px) {
+    grid-column: span 2;
+  }
 `;
 
 const Col2 = styled.div`
   grid-column: span 4;
+  @media (max-width: 666px) {
+    grid-column: span 2;
+  }
 `;
 const Col3 = styled.div`
   grid-column: span 8;
+  @media (max-width: 666px) {
+    grid-column: span 4;
+    margin-top: 20px;
+  }
 `;
 const FourImgCon = styled.div`
   width: calc(100% - 20px);
   margin-left: 10px;
   margin-top: 100px;
   margin-bottom: 100px;
+  @media (max-width: 666px) {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 `;
 const FourImgImgCon = styled.div`
   grid-column: span 4;
+
   img {
     width: 100%;
+    margin-bottom: 5px;
+  }
+  @media (max-width: 666px) {
+    grid-column: span 2;
+    margin-top: 100px;
+    margin-bottom: 100px;
   }
 `;
 const TwoImgCon = styled.div`
@@ -170,19 +235,78 @@ const TwoImgCon = styled.div`
   margin-left: 10px;
   margin-top: 100px;
   margin-bottom: 100px;
+  @media (max-width: 666px) {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
 `;
 const TwoImgImgCon = styled.div`
   grid-column: span 8;
+
   img {
     width: 100%;
+    margin-bottom: 5px;
+  }
+  @media (max-width: 666px) {
+    grid-column: span 4;
+    margin-top: 100px;
+    margin-bottom: 100px;
+  }
+`;
+const StatementCon = styled.div`
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+`;
+const Statement1Con = styled.div`
+  grid-column: span 8;
+`;
+const Statement2Con = styled.div`
+  grid-column: span 8;
+  @media (max-width: 666px) {
+    margin-top: 25px;
   }
 `;
 
 const Index = ({ data }) => {
-  const contents = data.prismicHomepage.data.project_relationship_group.map(
-    (content, index) => {
+  let isPageWide = useMediaQuery("(min-width: 667px)");
+  // const contents = data.prismicHomepage.data.project_relationship_group.map(
+  //   (content, index) => {
+  //     console.log(content.project_relationship_field.document.type);
+  //     if (content.project_relationship_field.document.type == "project") {
+  //       const handleClickScroll = () => {
+  //         var element = document.getElementById(
+  //           `${content.project_relationship_field.document.uid}`
+  //         );
+  //         if (element) {
+  //           element.scrollIntoView({ behavior: "smooth" });
+  //         }
+  //       };
+  //       var i = 1;
+  //       var x = i++;
+  //       return (
+  //         <div onClick={handleClickScroll}>
+  //           <PageLinks>
+  //             0{increment}{" "}
+  //             {content.project_relationship_field.document.data.title.text}
+  //           </PageLinks>
+  //         </div>
+  //       );
+  //     }
+  //   }
+  // );
+
+  const contents2 = data.prismicHomepage.data.project_relationship_group
+    .filter(function(content) {
+      if (content.project_relationship_field.document.type == "statement") {
+        return null;
+      }
+      return content;
+    })
+    .map((content, index) => {
+      console.log(content.project_relationship_field.document.type);
       if (content.project_relationship_field.document.type == "project") {
-        console.log(content.project_relationship_field.document.type);
         const handleClickScroll = () => {
           var element = document.getElementById(
             `${content.project_relationship_field.document.uid}`
@@ -191,7 +315,8 @@ const Index = ({ data }) => {
             element.scrollIntoView({ behavior: "smooth" });
           }
         };
-
+        var i = 1;
+        var x = i++;
         return (
           <div onClick={handleClickScroll}>
             <PageLinks>
@@ -201,8 +326,7 @@ const Index = ({ data }) => {
           </div>
         );
       }
-    }
-  );
+    });
 
   const overview = data.prismicHomepage.data.project_relationship_group.map(
     (content, index) => {
@@ -216,80 +340,158 @@ const Index = ({ data }) => {
             console.log(content_four.slice_type);
             // return <p>testing</p>;
             if (content_four.slice_type == "4ximg") {
-              return (
-                <FourImgCon>
-                  <Grid16>
-                    <FourImgImgCon>
+              if (isPageWide) {
+                return (
+                  <FourImgCon>
+                    <Grid16>
+                      <FourImgImgCon>
+                        {content_four.primary.img1.fluid != null ? (
+                          <img src={content_four.primary.img1.fluid.src} />
+                        ) : (
+                          ""
+                        )}
+                        <DecimaPCon>
+                          <p>{content_four.primary.img1_caption.text}</p>
+                        </DecimaPCon>
+                      </FourImgImgCon>
+                      <FourImgImgCon>
+                        {content_four.primary.img2.fluid != null ? (
+                          <img src={content_four.primary.img2.fluid.src} />
+                        ) : (
+                          ""
+                        )}
+                        <DecimaPCon>
+                          <p>{content_four.primary.img2_caption.text}</p>
+                        </DecimaPCon>
+                      </FourImgImgCon>
+                      <FourImgImgCon>
+                        {content_four.primary.img3.fluid != null ? (
+                          <img src={content_four.primary.img3.fluid.src} />
+                        ) : (
+                          ""
+                        )}
+                        <DecimaPCon>
+                          <p>{content_four.primary.img3_caption.text}</p>
+                        </DecimaPCon>
+                      </FourImgImgCon>
+                      <FourImgImgCon>
+                        {content_four.primary.img4.fluid != null ? (
+                          <img src={content_four.primary.img4.fluid.src} />
+                        ) : (
+                          ""
+                        )}
+                        <DecimaPCon>
+                          <p>{content_four.primary.img4_caption.text}</p>
+                        </DecimaPCon>
+                      </FourImgImgCon>
+                    </Grid16>
+                  </FourImgCon>
+                );
+              } else {
+                return (
+                  <FourImgCon>
+                    <Grid16>
                       {content_four.primary.img1.fluid != null ? (
-                        <img src={content_four.primary.img1.fluid.src} />
+                        <FourImgImgCon>
+                          <img src={content_four.primary.img1.fluid.src} />
+                          <DecimaPCon>
+                            <p>{content_four.primary.img1_caption.text}</p>
+                          </DecimaPCon>
+                        </FourImgImgCon>
                       ) : (
                         ""
                       )}
-                      <DecimaPCon>
-                        <p>{content_four.primary.img1_caption.text}</p>
-                      </DecimaPCon>
-                    </FourImgImgCon>
-                    <FourImgImgCon>
                       {content_four.primary.img2.fluid != null ? (
-                        <img src={content_four.primary.img2.fluid.src} />
+                        <FourImgImgCon>
+                          <img src={content_four.primary.img2.fluid.src} />
+                          <DecimaPCon>
+                            <p>{content_four.primary.img2_caption.text}</p>
+                          </DecimaPCon>
+                        </FourImgImgCon>
                       ) : (
                         ""
                       )}
-                      <DecimaPCon>
-                        <p>{content_four.primary.img2_caption.text}</p>
-                      </DecimaPCon>
-                    </FourImgImgCon>
-                    <FourImgImgCon>
                       {content_four.primary.img3.fluid != null ? (
-                        <img src={content_four.primary.img3.fluid.src} />
+                        <FourImgImgCon>
+                          <img src={content_four.primary.img3.fluid.src} />
+                          <DecimaPCon>
+                            <p>{content_four.primary.img3_caption.text}</p>
+                          </DecimaPCon>
+                        </FourImgImgCon>
                       ) : (
                         ""
                       )}
-                      <DecimaPCon>
-                        <p>{content_four.primary.img3_caption.text}</p>
-                      </DecimaPCon>
-                    </FourImgImgCon>
-                    <FourImgImgCon>
                       {content_four.primary.img4.fluid != null ? (
-                        <img src={content_four.primary.img4.fluid.src} />
+                        <FourImgImgCon>
+                          <img src={content_four.primary.img4.fluid.src} />
+                          <DecimaPCon>
+                            <p>{content_four.primary.img4_caption.text}</p>
+                          </DecimaPCon>
+                        </FourImgImgCon>
                       ) : (
                         ""
                       )}
-                      <DecimaPCon>
-                        <p>{content_four.primary.img4_caption.text}</p>
-                      </DecimaPCon>
-                    </FourImgImgCon>
-                  </Grid16>
-                </FourImgCon>
-              );
+                    </Grid16>
+                  </FourImgCon>
+                );
+              }
             }
             if (content_four.slice_type == "2ximg") {
-              return (
-                <TwoImgCon>
-                  <Grid16>
-                    <TwoImgImgCon>
+              if (isPageWide) {
+                return (
+                  <TwoImgCon>
+                    <Grid16>
+                      <TwoImgImgCon>
+                        {content_four.primary.img1.fluid != null ? (
+                          <img src={content_four.primary.img1.fluid.src} />
+                        ) : (
+                          ""
+                        )}
+                        <DecimaPCon>
+                          <p>{content_four.primary.img1_caption.text}</p>
+                        </DecimaPCon>
+                      </TwoImgImgCon>
+                      <TwoImgImgCon>
+                        {content_four.primary.img2.fluid != null ? (
+                          <img src={content_four.primary.img2.fluid.src} />
+                        ) : (
+                          ""
+                        )}
+                        <DecimaPCon>
+                          <p>{content_four.primary.img2_caption.text}</p>
+                        </DecimaPCon>
+                      </TwoImgImgCon>
+                    </Grid16>
+                  </TwoImgCon>
+                );
+              } else {
+                return (
+                  <TwoImgCon>
+                    <Grid16>
                       {content_four.primary.img1.fluid != null ? (
-                        <img src={content_four.primary.img1.fluid.src} />
+                        <TwoImgImgCon>
+                          <img src={content_four.primary.img1.fluid.src} />
+                          <DecimaPCon>
+                            <p>{content_four.primary.img1_caption.text}</p>
+                          </DecimaPCon>
+                        </TwoImgImgCon>
                       ) : (
                         ""
                       )}
-                      <DecimaPCon>
-                        <p>{content_four.primary.img1_caption.text}</p>
-                      </DecimaPCon>
-                    </TwoImgImgCon>
-                    <TwoImgImgCon>
                       {content_four.primary.img2.fluid != null ? (
-                        <img src={content_four.primary.img2.fluid.src} />
+                        <TwoImgImgCon>
+                          <img src={content_four.primary.img2.fluid.src} />
+                          <DecimaPCon>
+                            <p>{content_four.primary.img2_caption.text}</p>
+                          </DecimaPCon>
+                        </TwoImgImgCon>
                       ) : (
                         ""
                       )}
-                      <DecimaPCon>
-                        <p>{content_four.primary.img2_caption.text}</p>
-                      </DecimaPCon>
-                    </TwoImgImgCon>
-                  </Grid16>
-                </TwoImgCon>
-              );
+                    </Grid16>
+                  </TwoImgCon>
+                );
+              }
             }
           }
         );
@@ -358,6 +560,38 @@ const Index = ({ data }) => {
 
             {project}
           </div>
+        );
+      }
+      if (content.project_relationship_field.document.type == "statement") {
+        console.log(content.project_relationship_field.document.type);
+
+        return (
+          <StatementCon>
+            <Grid16>
+              <Statement1Con>
+                <HelveticaLrgCon>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        content.project_relationship_field.document.data
+                          .statement_1.html,
+                    }}
+                  />
+                </HelveticaLrgCon>
+              </Statement1Con>
+              <Statement2Con>
+                <HelveticaLrgCon>
+                  <div
+                    dangerouslySetInnerHTML={{
+                      __html:
+                        content.project_relationship_field.document.data
+                          .statement_2.html,
+                    }}
+                  />
+                </HelveticaLrgCon>
+              </Statement2Con>
+            </Grid16>
+          </StatementCon>
         );
       }
     }
@@ -442,7 +676,7 @@ const Index = ({ data }) => {
       <LogoCon>
         <Icon style={{ width: "100%", height: "100%" }}></Icon>
       </LogoCon>
-      <ContentsCon>{contents}</ContentsCon>
+      <ContentsCon>{contents2}</ContentsCon>
 
       <ProjectsCon>{overview}</ProjectsCon>
     </>
@@ -467,6 +701,20 @@ export const query = graphql`
         project_relationship_group {
           project_relationship_field {
             document {
+              ... on PrismicStatement {
+                id
+                type
+                data {
+                  statement_1 {
+                    text
+                    html
+                  }
+                  statement_2 {
+                    html
+                    text
+                  }
+                }
+              }
               ... on PrismicProject {
                 id
                 uid

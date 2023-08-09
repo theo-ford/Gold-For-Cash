@@ -340,6 +340,24 @@ var plugins = [{
           }
         }
       },
+      "statement": {
+        "Main": {
+          "statement_1": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "statement 1"
+            }
+          },
+          "statement_2": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "statement 2"
+            }
+          }
+        }
+      },
       "homepage": {
         "Main": {
           "sizzle": {
@@ -371,7 +389,7 @@ var plugins = [{
                   "type": "Link",
                   "config": {
                     "select": "document",
-                    "customtypes": ["project"],
+                    "customtypes": ["project", "statement"],
                     "label": "Project Relationship Field"
                   }
                 }

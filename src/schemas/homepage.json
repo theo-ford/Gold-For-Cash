@@ -29,7 +29,7 @@
             "type": "Link",
             "config": {
               "select": "document",
-              "customtypes": ["project"],
+              "customtypes": ["project", "statement"],
               "label": "Project Relationship Field"
             }
           }
