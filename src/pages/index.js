@@ -161,6 +161,16 @@ const FourImgImgCon = styled.div`
     width: 100%;
   }
 `;
+const TwoImgCon = styled.div`
+  width: calc(100% - 20px);
+  margin-left: 10px;
+`;
+const TwoImgImgCon = styled.div`
+  grid-column: span 8;
+  img {
+    width: 100%;
+  }
+`;
 
 const Index = ({ data }) => {
   const contents = data.prismicHomepage.data.project_relationship_group.map(
@@ -233,6 +243,28 @@ const Index = ({ data }) => {
                     </FourImgImgCon>
                   </Grid16>
                 </FourImgCon>
+              );
+            }
+            if (content_four.slice_type == "2ximg") {
+              return (
+                <TwoImgCon>
+                  <Grid16>
+                    <TwoImgImgCon>
+                      {content_four.primary.img1.fluid != null ? (
+                        <img src={content_four.primary.img1.fluid.src} />
+                      ) : (
+                        ""
+                      )}
+                    </TwoImgImgCon>
+                    <TwoImgImgCon>
+                      {content_four.primary.img2.fluid != null ? (
+                        <img src={content_four.primary.img2.fluid.src} />
+                      ) : (
+                        ""
+                      )}
+                    </TwoImgImgCon>
+                  </Grid16>
+                </TwoImgCon>
               );
             }
           }
@@ -457,6 +489,22 @@ export const query = graphql`
                           }
                         }
                         img4 {
+                          fluid {
+                            src
+                          }
+                        }
+                      }
+                    }
+                    ... on PrismicProjectBody2ximg {
+                      id
+                      slice_type
+                      primary {
+                        img1 {
+                          fluid {
+                            src
+                          }
+                        }
+                        img2 {
                           fluid {
                             src
                           }

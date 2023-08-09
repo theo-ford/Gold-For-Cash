@@ -208,12 +208,26 @@ var plugins = [{
                         "label": "img1"
                       }
                     },
+                    "img1_caption": {
+                      "type": "StructuredText",
+                      "config": {
+                        "multi": "paragraph",
+                        "label": "Img1 caption"
+                      }
+                    },
                     "img2": {
                       "type": "Image",
                       "config": {
                         "constraint": {},
                         "thumbnails": [],
                         "label": "img2"
+                      }
+                    },
+                    "img2_caption": {
+                      "type": "StructuredText",
+                      "config": {
+                        "multi": "paragraph",
+                        "label": "img2 caption"
                       }
                     },
                     "img3": {
@@ -224,12 +238,66 @@ var plugins = [{
                         "label": "img3"
                       }
                     },
+                    "img3_caption": {
+                      "type": "StructuredText",
+                      "config": {
+                        "multi": "paragraph",
+                        "label": "img3 caption"
+                      }
+                    },
                     "img4": {
                       "type": "Image",
                       "config": {
                         "constraint": {},
                         "thumbnails": [],
                         "label": "img4"
+                      }
+                    },
+                    "img4_caption": {
+                      "type": "StructuredText",
+                      "config": {
+                        "multi": "paragraph",
+                        "label": "img4 caption"
+                      }
+                    }
+                  },
+                  "repeat": {}
+                },
+                "2ximg": {
+                  "type": "Slice",
+                  "fieldset": "2xImg",
+                  "description": "Img Row of 2",
+                  "icon": "add_box",
+                  "display": "list",
+                  "non-repeat": {
+                    "img1": {
+                      "type": "Image",
+                      "config": {
+                        "constraint": {},
+                        "thumbnails": [],
+                        "label": "img1"
+                      }
+                    },
+                    "img1_caption": {
+                      "type": "StructuredText",
+                      "config": {
+                        "multi": "paragraph",
+                        "label": "img1 Caption"
+                      }
+                    },
+                    "img2": {
+                      "type": "Image",
+                      "config": {
+                        "constraint": {},
+                        "thumbnails": [],
+                        "label": "img2"
+                      }
+                    },
+                    "img2_caption": {
+                      "type": "StructuredText",
+                      "config": {
+                        "multi": "paragraph",
+                        "label": "img2 Caption"
                       }
                     }
                   },
