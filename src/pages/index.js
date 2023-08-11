@@ -79,6 +79,16 @@ const ProjectsCon = styled.div`
 const SizzleVid = styled.video`
   width: 100%;
 `;
+const MobileSizzleVidConCon = styled.div`
+  margin: 10px;
+  position: absolute;
+  bottom: 0;
+`;
+const MobileSizzleVidCon = styled.div`
+  grid-column: span 2;
+  /* background-color: green;
+  height: 400px; */
+`;
 const NavCon = styled.div`
   width: calc(100% - 20px);
   position: fixed;
@@ -268,6 +278,25 @@ const Statement2Con = styled.div`
     margin-top: 25px;
   }
 `;
+const VideoConCon = styled.div`
+  width: calc(100% - 20px);
+  margin-left: 10px;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  @media (max-width: 666px) {
+    /* grid-column: span 4; */
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+`;
+const VideoCon = styled.div`
+  grid-column: span 8;
+  @media (max-width: 666px) {
+    grid-column: span 4;
+    /* margin-top: 100px;
+    margin-bottom: 100px; */
+  }
+`;
 
 const Index = ({ data }) => {
   let isPageWide = useMediaQuery("(min-width: 667px)");
@@ -435,8 +464,7 @@ const Index = ({ data }) => {
                   </FourImgCon>
                 );
               }
-            }
-            if (content_four.slice_type == "2ximg") {
+            } else if (content_four.slice_type == "2ximg") {
               if (isPageWide) {
                 return (
                   <TwoImgCon>
@@ -492,9 +520,31 @@ const Index = ({ data }) => {
                   </TwoImgCon>
                 );
               }
+            } else if (content_four.slice_type == "video") {
+              return (
+                <VideoConCon>
+                  <Grid16>
+                    <VideoCon>
+                      <ReactPlayer
+                        // className="player"
+                        // playing={playing}
+                        // muted={muteState}
+                        // loop={true}
+                        // volume={volume}
+                        // controls={true}
+                        width="100%"
+                        // height="100%"
+                        controls={true}
+                        url={content_four.primary.video_url.url}
+                      ></ReactPlayer>
+                    </VideoCon>
+                  </Grid16>
+                </VideoConCon>
+              );
             }
           }
         );
+
         return (
           <div id={content.project_relationship_field.document.uid}>
             {/* <div> */}
@@ -600,15 +650,29 @@ const Index = ({ data }) => {
   return (
     <>
       <HeroCon>
-        <SizzleVidConCon>
-          <Grid16>
-            <SizzleVidCon>
-              <SizzleVid autoPlay playsInline muted loop>
-                <source src={data.prismicHomepage.data.sizzle.url}></source>
-              </SizzleVid>
-            </SizzleVidCon>
-          </Grid16>
-        </SizzleVidConCon>
+        {isPageWide ? (
+          <SizzleVidConCon>
+            <Grid16>
+              <SizzleVidCon>
+                <SizzleVid autoPlay playsInline muted loop>
+                  <source src={data.prismicHomepage.data.sizzle.url}></source>
+                </SizzleVid>
+              </SizzleVidCon>
+            </Grid16>
+          </SizzleVidConCon>
+        ) : (
+          <MobileSizzleVidConCon>
+            <Grid16>
+              <MobileSizzleVidCon>
+                <SizzleVid autoPlay playsInline muted loop>
+                  <source
+                    src={data.prismicHomepage.data.sizzle_mobile.url}
+                  ></source>
+                </SizzleVid>
+              </MobileSizzleVidCon>
+            </Grid16>
+          </MobileSizzleVidConCon>
+        )}
       </HeroCon>
 
       <IntroCon>
@@ -698,6 +762,9 @@ export const query = graphql`
         sizzle {
           url
         }
+        sizzle_mobile {
+          url
+        }
         project_relationship_group {
           project_relationship_field {
             document {
@@ -741,6 +808,15 @@ export const query = graphql`
                     text
                   }
                   body {
+                    ... on PrismicProjectBodyVideo {
+                      id
+                      slice_type
+                      primary {
+                        video_url {
+                          url
+                        }
+                      }
+                    }
                     ... on PrismicProjectBody4ximg {
                       id
                       slice_type

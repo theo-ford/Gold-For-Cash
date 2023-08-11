@@ -6,7 +6,7 @@ import { ImageOrientation } from "../components/utils/image-orientation";
 import styled, { createGlobalStyle } from "styled-components";
 import ReactPlayer from "react-player";
 // import { VideoComponent } from "../components/tf/video_component";
-import { VideoComponentNoControls } from "../components/tf/video-component-no-controls";
+// import { VideoComponentNoControls } from "../components/tf/video-component-no-controls";
 import { useMediaQuery } from "../components/tf/media-query";
 
 const Project = ({ data }) => {

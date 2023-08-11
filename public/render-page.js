@@ -302,6 +302,22 @@ var plugins = [{
                     }
                   },
                   "repeat": {}
+                },
+                "video": {
+                  "type": "Slice",
+                  "fieldset": "Video",
+                  "description": "Video",
+                  "icon": "add_box",
+                  "display": "list",
+                  "non-repeat": {
+                    "video_url": {
+                      "type": "Link",
+                      "config": {
+                        "label": "Video Url"
+                      }
+                    }
+                  },
+                  "repeat": {}
                 }
               }
             }
@@ -365,6 +381,13 @@ var plugins = [{
             "config": {
               "select": "media",
               "label": "Sizzle"
+            }
+          },
+          "sizzle_mobile": {
+            "type": "Link",
+            "config": {
+              "select": "media",
+              "label": "Sizzle Mobile"
             }
           },
           "short_intro": {

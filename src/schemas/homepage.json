@@ -7,6 +7,13 @@
         "label": "Sizzle"
       }
     },
+    "sizzle_mobile": {
+      "type": "Link",
+      "config": {
+        "select": "media",
+        "label": "Sizzle Mobile"
+      }
+    },
     "short_intro": {
       "type": "StructuredText",
       "config": {
