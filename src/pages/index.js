@@ -14,6 +14,8 @@ import { useOnScreen } from "../components/hooks/useOnScreen";
 import ReactPlayer from "react-player";
 import Icon from "../../assets/G4C_kern_black.svg";
 
+import { AnimationFixed1 } from "../components/tf/animation-fixed-1";
+
 const Grid16 = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr /* 4 */ 1fr 1fr 1fr 1fr /* 8 */ 1fr 1fr 1fr 1fr /* 12 */ 1fr 1fr 1fr 1fr /* 16 */;
@@ -297,34 +299,15 @@ const VideoCon = styled.div`
     margin-bottom: 100px; */
   }
 `;
+const PageContentCon = styled.div`
+  position: absolute;
+  top: 0;
+  z-index: 100;
+  overflow: hidden;
+`;
 
 const Index = ({ data }) => {
   let isPageWide = useMediaQuery("(min-width: 667px)");
-  // const contents = data.prismicHomepage.data.project_relationship_group.map(
-  //   (content, index) => {
-  //     console.log(content.project_relationship_field.document.type);
-  //     if (content.project_relationship_field.document.type == "project") {
-  //       const handleClickScroll = () => {
-  //         var element = document.getElementById(
-  //           `${content.project_relationship_field.document.uid}`
-  //         );
-  //         if (element) {
-  //           element.scrollIntoView({ behavior: "smooth" });
-  //         }
-  //       };
-  //       var i = 1;
-  //       var x = i++;
-  //       return (
-  //         <div onClick={handleClickScroll}>
-  //           <PageLinks>
-  //             0{increment}{" "}
-  //             {content.project_relationship_field.document.data.title.text}
-  //           </PageLinks>
-  //         </div>
-  //       );
-  //     }
-  //   }
-  // );
 
   const contents2 = data.prismicHomepage.data.project_relationship_group
     .filter(function(content) {
@@ -334,7 +317,6 @@ const Index = ({ data }) => {
       return content;
     })
     .map((content, index) => {
-      console.log(content.project_relationship_field.document.type);
       if (content.project_relationship_field.document.type == "project") {
         const handleClickScroll = () => {
           var element = document.getElementById(
@@ -360,14 +342,8 @@ const Index = ({ data }) => {
   const overview = data.prismicHomepage.data.project_relationship_group.map(
     (content, index) => {
       if (content.project_relationship_field.document.type == "project") {
-        console.log(content.project_relationship_field.document.type);
-        // return (
-        //   <p>{content.project_relationship_field.document.data.title.text}</p>
-        // );
         const project = content.project_relationship_field.document.data.body.map(
           (content_four, index) => {
-            console.log(content_four.slice_type);
-            // return <p>testing</p>;
             if (content_four.slice_type == "4ximg") {
               if (isPageWide) {
                 return (
@@ -613,8 +589,6 @@ const Index = ({ data }) => {
         );
       }
       if (content.project_relationship_field.document.type == "statement") {
-        console.log(content.project_relationship_field.document.type);
-
         return (
           <StatementCon>
             <Grid16>
@@ -649,100 +623,106 @@ const Index = ({ data }) => {
 
   return (
     <>
-      <HeroCon>
-        {isPageWide ? (
-          <SizzleVidConCon>
-            <Grid16>
-              <SizzleVidCon>
-                <SizzleVid autoPlay playsInline muted loop>
-                  <source src={data.prismicHomepage.data.sizzle.url}></source>
-                </SizzleVid>
-              </SizzleVidCon>
-            </Grid16>
-          </SizzleVidConCon>
-        ) : (
-          <MobileSizzleVidConCon>
-            <Grid16>
-              <MobileSizzleVidCon>
-                <SizzleVid autoPlay playsInline muted loop>
-                  <source
-                    src={data.prismicHomepage.data.sizzle_mobile.url}
-                  ></source>
-                </SizzleVid>
-              </MobileSizzleVidCon>
-            </Grid16>
-          </MobileSizzleVidConCon>
-        )}
-      </HeroCon>
+      <PageContentCon>
+        <HeroCon>
+          {isPageWide ? (
+            <SizzleVidConCon>
+              <Grid16>
+                <SizzleVidCon>
+                  <SizzleVid autoPlay playsInline muted loop>
+                    <source src={data.prismicHomepage.data.sizzle.url}></source>
+                  </SizzleVid>
+                </SizzleVidCon>
+              </Grid16>
+            </SizzleVidConCon>
+          ) : (
+            <MobileSizzleVidConCon>
+              <Grid16>
+                <MobileSizzleVidCon>
+                  <SizzleVid autoPlay playsInline muted loop>
+                    <source
+                      src={data.prismicHomepage.data.sizzle_mobile.url}
+                    ></source>
+                  </SizzleVid>
+                </MobileSizzleVidCon>
+              </Grid16>
+            </MobileSizzleVidConCon>
+          )}
+        </HeroCon>
 
-      <IntroCon>
-        <Grid16>
-          <ClientsCon>
-            <SmallAboutP> {data.prismicHomepage.data.clients.text}</SmallAboutP>
-          </ClientsCon>
-          <AboutCon>
-            <SmallAboutP>
-              {data.prismicHomepage.data.short_intro.text}
-            </SmallAboutP>
-          </AboutCon>
-        </Grid16>
-      </IntroCon>
+        <IntroCon>
+          <Grid16>
+            <ClientsCon>
+              <SmallAboutP>
+                {" "}
+                {data.prismicHomepage.data.clients.text}
+              </SmallAboutP>
+            </ClientsCon>
+            <AboutCon>
+              <SmallAboutP>
+                {data.prismicHomepage.data.short_intro.text}
+              </SmallAboutP>
+            </AboutCon>
+          </Grid16>
+        </IntroCon>
 
-      <NavCon>
-        <Grid16>
-          <ContactTitleCon>
-            <DecimaP>Email:</DecimaP>
-            <DecimaP>Web:</DecimaP>
-            <DecimaP>Phone:</DecimaP>
-          </ContactTitleCon>
-          <ContactInfoCon>
-            <DecimaP>{data.prismicAbout.data.email.text}</DecimaP>
-            <DecimaP>{data.prismicAbout.data.web.text}</DecimaP>
-            <DecimaP>{data.prismicAbout.data.phone.text}</DecimaP>
-          </ContactInfoCon>
-          <AddressTitleCon>
-            <DecimaP>Address:</DecimaP>
-          </AddressTitleCon>
-          <AddressCon>
-            <DecimaPCon>
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: data.prismicAbout.data.address.html,
-                }}
-              />
-            </DecimaPCon>
-          </AddressCon>
-          <SocialsTitleCon>
-            <DecimaP>Socials</DecimaP>
-          </SocialsTitleCon>
-          <SocialsLinksCon>
-            <DecimaP>Instagram</DecimaP>
-            <DecimaP>Twitter</DecimaP>
-            <DecimaP>LinkedIn</DecimaP>
-          </SocialsLinksCon>
-          <PageLinksCon>
-            <PageLinks>(Selected)</PageLinks>
-            <PageLinks>About</PageLinks>
-            <PageLinks>Archive</PageLinks>
-          </PageLinksCon>
-          <CodeCon>
-            <PageLinks style={{ fontSize: "12px" }}>TRX11-122</PageLinks>
-          </CodeCon>
-          <GMTCon>
-            <DecimaP>GMT 14:52</DecimaP>
-          </GMTCon>
-          <ESTCon>
-            <DecimaP>EST 20:52</DecimaP>
-          </ESTCon>
-        </Grid16>
-      </NavCon>
+        <NavCon>
+          <Grid16>
+            <ContactTitleCon>
+              <DecimaP>Email:</DecimaP>
+              <DecimaP>Web:</DecimaP>
+              <DecimaP>Phone:</DecimaP>
+            </ContactTitleCon>
+            <ContactInfoCon>
+              <DecimaP>{data.prismicAbout.data.email.text}</DecimaP>
+              <DecimaP>{data.prismicAbout.data.web.text}</DecimaP>
+              <DecimaP>{data.prismicAbout.data.phone.text}</DecimaP>
+            </ContactInfoCon>
+            <AddressTitleCon>
+              <DecimaP>Address:</DecimaP>
+            </AddressTitleCon>
+            <AddressCon>
+              <DecimaPCon>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: data.prismicAbout.data.address.html,
+                  }}
+                />
+              </DecimaPCon>
+            </AddressCon>
+            <SocialsTitleCon>
+              <DecimaP>Socials</DecimaP>
+            </SocialsTitleCon>
+            <SocialsLinksCon>
+              <DecimaP>Instagram</DecimaP>
+              <DecimaP>Twitter</DecimaP>
+              <DecimaP>LinkedIn</DecimaP>
+            </SocialsLinksCon>
+            <PageLinksCon>
+              <PageLinks>(Selected)</PageLinks>
+              <PageLinks>About</PageLinks>
+              <PageLinks>Archive</PageLinks>
+            </PageLinksCon>
+            <CodeCon>
+              <PageLinks style={{ fontSize: "12px" }}>TRX11-122</PageLinks>
+            </CodeCon>
+            <GMTCon>
+              <DecimaP>GMT 14:52</DecimaP>
+            </GMTCon>
+            <ESTCon>
+              <DecimaP>EST 20:52</DecimaP>
+            </ESTCon>
+          </Grid16>
+        </NavCon>
 
-      <LogoCon>
-        <Icon style={{ width: "100%", height: "100%" }}></Icon>
-      </LogoCon>
-      <ContentsCon>{contents2}</ContentsCon>
+        <LogoCon>
+          <Icon style={{ width: "100%", height: "100%" }}></Icon>
+        </LogoCon>
+        <ContentsCon>{contents2}</ContentsCon>
 
-      <ProjectsCon>{overview}</ProjectsCon>
+        <ProjectsCon>{overview}</ProjectsCon>
+      </PageContentCon>
+      <AnimationFixed1></AnimationFixed1>
     </>
   );
 };
@@ -750,7 +730,7 @@ const Index = ({ data }) => {
 export default withPreview(Index);
 
 export const query = graphql`
-  query MyQuery {
+  query MyQuery5 {
     prismicHomepage {
       data {
         clients {
