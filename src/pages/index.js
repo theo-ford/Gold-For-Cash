@@ -154,7 +154,7 @@ const PageLinksCon = styled.div`
   }
 `;
 const PageLinks = styled.p`
-  font-family: "Linotype Univers 530 Medium";
+  font-family: "Helvetica Neue LT Pro";
   font-size: 32px;
   font-weight: bold;
   letter-spacing: -2%;
@@ -162,7 +162,7 @@ const PageLinks = styled.p`
 `;
 const HelveticaLrgCon = styled.div`
   p {
-    font-family: "Linotype Univers 530 Medium";
+    font-family: "Helvetica Neue LT Pro";
     font-size: 32px;
     font-weight: bold;
     letter-spacing: -2%;
@@ -304,6 +304,9 @@ const PageContentCon = styled.div`
   top: 0;
   z-index: 100;
   overflow: hidden;
+`;
+const BoldTitleCon = styled.div`
+  grid-column: span 16;
 `;
 
 const Index = ({ data }) => {
@@ -525,6 +528,20 @@ const Index = ({ data }) => {
           <div id={content.project_relationship_field.document.uid}>
             {/* <div> */}
             <ProjectInfoCon>
+              <Grid16>
+                <BoldTitleCon>
+                  <HelveticaLrgCon>
+                    <p>
+                      {
+                        content.project_relationship_field.document.data.title
+                          .text
+                      }
+                      <br></br>
+                      <br></br>
+                    </p>
+                  </HelveticaLrgCon>
+                </BoldTitleCon>
+              </Grid16>
               <Grid16>
                 <Col1>
                   <DecimaPCon>
