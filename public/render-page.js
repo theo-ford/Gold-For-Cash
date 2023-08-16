@@ -310,10 +310,31 @@ var plugins = [{
                   "icon": "add_box",
                   "display": "list",
                   "non-repeat": {
-                    "video_url": {
+                    "video_url_1": {
                       "type": "Link",
                       "config": {
-                        "label": "Video Url"
+                        "label": "Video Url 1",
+                        "select": null
+                      }
+                    },
+                    "video_caption_1": {
+                      "type": "StructuredText",
+                      "config": {
+                        "single": "paragraph",
+                        "label": "video caption 1"
+                      }
+                    },
+                    "video_url_2": {
+                      "type": "Link",
+                      "config": {
+                        "label": "Video Url 2"
+                      }
+                    },
+                    "video_caption_2": {
+                      "type": "StructuredText",
+                      "config": {
+                        "single": "paragraph",
+                        "label": "video caption 2"
                       }
                     }
                   },
@@ -35362,7 +35383,7 @@ __webpack_require__.r(__webpack_exports__);
 
 const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_1__["createGlobalStyle"]`
 
- html {
+ /* html {
    main{
      opacity: 0;
      transition: 250ms opacity ease;
@@ -35381,7 +35402,7 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_1__["createGlobal
    .artist-list {
       opacity: 1;    
     }
- }
+ } */
 
 body {
   font-family: "Helvetica Neue", sans-serif;

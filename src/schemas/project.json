@@ -164,10 +164,31 @@
             "icon": "add_box",
             "display": "list",
             "non-repeat": {
-              "video_url": {
+              "video_url_1": {
                 "type": "Link",
                 "config": {
-                  "label": "Video Url"
+                  "label": "Video Url 1",
+                  "select": null
+                }
+              },
+              "video_caption_1": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "video caption 1"
+                }
+              },
+              "video_url_2": {
+                "type": "Link",
+                "config": {
+                  "label": "Video Url 2"
+                }
+              },
+              "video_caption_2": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph",
+                  "label": "video caption 2"
                 }
               }
             },

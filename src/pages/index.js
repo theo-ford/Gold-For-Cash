@@ -15,6 +15,16 @@ import ReactPlayer from "react-player";
 import Icon from "../../assets/G4C_kern_black.svg";
 
 import { AnimationFixed1 } from "../components/tf/animation-fixed-1";
+import { VideoComponent } from "../components/tf/zz/video_component_with_controls";
+import { VideoComponentNoControls } from "../components/tf/zz/video-component-no-controls";
+// import Plyr from "plyr";
+// import "plyr/dist/plyr.css";
+
+// import "../components/plyr-master/src/js/plyr.js";
+// import Plyr from "plyr-react";
+// import "plyr-react/dist/plyr.css";
+// import "plyr/src/js/plyr.js";
+// import plyr from "plyr";
 
 const Grid16 = styled.div`
   display: grid;
@@ -31,6 +41,7 @@ const LogoCon = styled.div`
   width: 400px;
   position: fixed;
   margin: 10px;
+  z-index: 200;
   img {
     width: 100%;
   }
@@ -40,6 +51,7 @@ const LogoCon = styled.div`
 `;
 const IntroCon = styled.div`
   position: fixed;
+  z-index: 200;
   margin: 10px;
   width: calc(100% - 20px);
   @media (max-width: 666px) {
@@ -97,6 +109,7 @@ const NavCon = styled.div`
   margin: 10px;
   bottom: 0;
   height: 100px;
+  z-index: 200;
   /* background-color: green; */
 `;
 const ContactTitleCon = styled.div`
@@ -285,6 +298,7 @@ const VideoConCon = styled.div`
   margin-left: 10px;
   margin-top: 100px;
   margin-bottom: 100px;
+
   @media (max-width: 666px) {
     /* grid-column: span 4; */
     margin-top: 0px;
@@ -293,12 +307,31 @@ const VideoConCon = styled.div`
 `;
 const VideoCon = styled.div`
   grid-column: span 8;
+  /* background-color: red; */
   @media (max-width: 666px) {
     grid-column: span 4;
     /* margin-top: 100px;
     margin-bottom: 100px; */
   }
 `;
+const VideoConInner = styled.div`
+  width: 100%;
+  /* padding-top: 56.25%;
+  position: relative; */
+  /* background-color: black; */
+`;
+const VideoConInner2 = styled.div`
+  /* position: absolute; */
+  position: relative;
+  padding-top: 56.25%;
+  /* background-color: black; */
+  .react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+`;
+
 const PageContentCon = styled.div`
   position: absolute;
   top: 0;
@@ -500,22 +533,77 @@ const Index = ({ data }) => {
                 );
               }
             } else if (content_four.slice_type == "video") {
+              console.log("VIDEO URL 1");
+              console.log(content_four.primary.video_url_1);
+              console.log("VIDEO URL 2");
+              console.log(content_four.primary.video_url_2);
+
+              var inner1background = null;
+              var inner2background = null;
+
+              if (content_four.primary.video_url_1.url == "") {
+                inner1background = null;
+              } else {
+                inner1background = true;
+              }
+
+              if (content_four.primary.video_url_2.url == "") {
+                inner2background = null;
+              } else {
+                inner2background = true;
+              }
+
+              // const player = new Plyr("#player");
               return (
                 <VideoConCon>
                   <Grid16>
                     <VideoCon>
-                      <ReactPlayer
-                        // className="player"
-                        // playing={playing}
-                        // muted={muteState}
-                        // loop={true}
-                        // volume={volume}
-                        // controls={true}
-                        width="100%"
-                        // height="100%"
-                        controls={true}
-                        url={content_four.primary.video_url.url}
-                      ></ReactPlayer>
+                      <VideoConInner
+                        style={
+                          inner1background
+                            ? { backgroundColor: "black" }
+                            : { backgroundColor: "none" }
+                        }
+                      >
+                        <VideoConInner2>
+                          <ReactPlayer
+                            className="react-player"
+                            width="100%"
+                            height="100%"
+                            // height="56.25"
+                            controls={true}
+                            url={content_four.primary.video_url_1.url}
+                          ></ReactPlayer>
+                          {/* <VideoComponent
+                            source={content_four.primary.video_url_1.url}
+                          ></VideoComponent> */}
+                        </VideoConInner2>
+                      </VideoConInner>
+
+                      <DecimaP>Testing</DecimaP>
+                    </VideoCon>
+
+                    <VideoCon>
+                      <VideoConInner
+                        style={
+                          inner2background
+                            ? { backgroundColor: "black" }
+                            : { backgroundColor: "none" }
+                        }
+                      >
+                        <VideoConInner2>
+                          <ReactPlayer
+                            className="react-player"
+                            width="100%"
+                            height="100%"
+                            // height="56.25"
+                            controls={true}
+                            url={content_four.primary.video_url_2.url}
+                          ></ReactPlayer>
+                        </VideoConInner2>
+                      </VideoConInner>
+
+                      <DecimaP>Testing</DecimaP>
                     </VideoCon>
                   </Grid16>
                 </VideoConCon>
@@ -811,8 +899,19 @@ export const query = graphql`
                       id
                       slice_type
                       primary {
-                        video_url {
+                        video_url_1 {
                           url
+                        }
+                        video_url_2 {
+                          url
+                        }
+                        video_caption_1 {
+                          html
+                          text
+                        }
+                        video_caption_2 {
+                          html
+                          text
                         }
                       }
                     }

@@ -21,6 +21,11 @@ const VideoRow = styled.div`
 const PlayerWrapper = styled.div`
   position: relative;
   padding-top: 56.25%;
+  .react-player {
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
 `;
 
 const ReactPlayerButton = styled.p`
@@ -158,14 +163,13 @@ export const VideoComponent = ({ content, source }) => {
 
   return (
     <>
-      <p> React Player</p>
       <VideoGrid>
         <VideoRow>
           <PlayerWrapper>
             <FullScreen handle={handle}>
               <ReactPlayer
                 ref={videoRef}
-                className="player"
+                className="react-player"
                 playing={playing}
                 muted={muteState}
                 loop={true}

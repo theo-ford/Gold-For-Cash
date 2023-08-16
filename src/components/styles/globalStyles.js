@@ -3,7 +3,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyle = createGlobalStyle`
 
- html {
+ /* html {
    main{
      opacity: 0;
      transition: 250ms opacity ease;
@@ -22,7 +22,7 @@ const GlobalStyle = createGlobalStyle`
    .artist-list {
       opacity: 1;    
     }
- }
+ } */
 
 body {
   font-family: "Helvetica Neue", sans-serif;
@@ -240,6 +240,34 @@ h1.navRight {
   width: 100%;
   /* position: fixed; */
 }
+
+/* React Player */
+/* .player-wrapper {
+  width: auto; // Reset width
+  height: auto; // Reset height
+}
+.react-player {
+  padding-top: 56.25%; // Percentage ratio for 16:9
+  position: relative; // Set to relative
+}
+
+.react-player > div {
+  position: absolute; // Scaling will occur since parent is relative now
+} */
+/* .player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;  
+} */
+
+/* .react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+} */
 
 `;
 
