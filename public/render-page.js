@@ -35362,26 +35362,26 @@ __webpack_require__.r(__webpack_exports__);
 
 const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_1__["createGlobalStyle"]`
 
-// html {
-//   main{
-//     opacity: 0;
-//     transition: 250ms opacity ease;
-//   }
-//   // .artist-list {
-//   //   opacity: 0;
-//   //   transition: 250ms opacity ease;    
-//   // }
-// }
+ html {
+   main{
+     opacity: 0;
+     transition: 250ms opacity ease;
+   }
+    .artist-list {
+     opacity: 0;
+     transition: 250ms opacity ease;    
+    }
+ }
 
-// html.wf-active,
-// html.wf-inactive {
-//   main{
-//     opacity: 1;
-//   }
-//   // .artist-list {
-//   //   opacity: 1;    
-//   // }
-// }
+ html.wf-active,
+ html.wf-inactive {
+   main{
+     opacity: 1;
+   }
+   .artist-list {
+      opacity: 1;    
+    }
+ }
 
 body {
   font-family: "Helvetica Neue", sans-serif;
