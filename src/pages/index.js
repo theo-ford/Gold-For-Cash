@@ -344,7 +344,7 @@ const BoldTitleCon = styled.div`
 
 const Index = ({ data }) => {
   let isPageWide = useMediaQuery("(min-width: 667px)");
-
+  console.log("Test");
   const contents2 = data.prismicHomepage.data.project_relationship_group
     .filter(function(content) {
       if (content.project_relationship_field.document.type == "statement") {
