@@ -134,6 +134,7 @@ const ESTCon = styled.div`
   }
 `;
 export const Nav = ({}) => {
+  console.log("GIT TEST");
   const data = useStaticQuery(graphql`
     query MyQuery6 {
       prismicAbout {
