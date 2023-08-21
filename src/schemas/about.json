@@ -27,6 +27,57 @@
         "multi": "paragraph",
         "label": "Address"
       }
+    },
+    "bio": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "Bio"
+      }
+    },
+    "clients": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "list-item",
+        "label": "Clients"
+      }
+    },
+    "agencies": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "o-list-item",
+        "label": "Agencies"
+      }
+    },
+    "portrait": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Portrait"
+      }
+    },
+    "portrait_caption": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Portrait Caption"
+      }
+    },
+    "logos_gif": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Logos Gif"
+      }
+    },
+    "logos_gif_caption": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "Logos Gif Caption"
+      }
     }
   }
 }

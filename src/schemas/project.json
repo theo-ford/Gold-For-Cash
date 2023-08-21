@@ -13,6 +13,13 @@
         "label": "title"
       }
     },
+    "index_number": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph",
+        "label": "index number"
+      }
+    },
     "client": {
       "type": "StructuredText",
       "config": {
@@ -181,7 +188,8 @@
               "video_url_2": {
                 "type": "Link",
                 "config": {
-                  "label": "Video Url 2"
+                  "label": "Video Url 2",
+                  "select": null
                 }
               },
               "video_caption_2": {

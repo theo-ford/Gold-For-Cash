@@ -24,8 +24,12 @@ const GlobalStyle = createGlobalStyle`
     }
  } */
 
+.wf-loading {
+  opacity: 0;
+}
+
 body {
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Helvetica Neue LT Pro", sans-serif;
   font-weight: normal;
   font-style: normal;
 
@@ -50,7 +54,7 @@ input {
 }
 
 h1,h2,h3,h4,h5, p{
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Helvetica Neue LT Pro", sans-serif;
   font-weight: normal;
 
   margin: 0;

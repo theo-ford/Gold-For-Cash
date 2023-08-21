@@ -159,6 +159,13 @@ var plugins = [{
               "label": "title"
             }
           },
+          "index_number": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "index number"
+            }
+          },
           "client": {
             "type": "StructuredText",
             "config": {
@@ -327,7 +334,8 @@ var plugins = [{
                     "video_url_2": {
                       "type": "Link",
                       "config": {
-                        "label": "Video Url 2"
+                        "label": "Video Url 2",
+                        "select": null
                       }
                     },
                     "video_caption_2": {
@@ -373,6 +381,57 @@ var plugins = [{
             "config": {
               "multi": "paragraph",
               "label": "Address"
+            }
+          },
+          "bio": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph",
+              "label": "Bio"
+            }
+          },
+          "clients": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "list-item",
+              "label": "Clients"
+            }
+          },
+          "agencies": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "o-list-item",
+              "label": "Agencies"
+            }
+          },
+          "portrait": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "Portrait"
+            }
+          },
+          "portrait_caption": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Portrait Caption"
+            }
+          },
+          "logos_gif": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "Logos Gif"
+            }
+          },
+          "logos_gif_caption": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph",
+              "label": "Logos Gif Caption"
             }
           }
         }
@@ -35404,8 +35463,12 @@ const GlobalStyle = styled_components__WEBPACK_IMPORTED_MODULE_1__["createGlobal
     }
  } */
 
+.wf-loading {
+  opacity: 0;
+}
+
 body {
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Helvetica Neue LT Pro", sans-serif;
   font-weight: normal;
   font-style: normal;
 
@@ -35430,7 +35493,7 @@ input {
 }
 
 h1,h2,h3,h4,h5, p{
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: "Helvetica Neue LT Pro", sans-serif;
   font-weight: normal;
 
   margin: 0;
@@ -35620,6 +35683,34 @@ h1.navRight {
   width: 100%;
   /* position: fixed; */
 }
+
+/* React Player */
+/* .player-wrapper {
+  width: auto; // Reset width
+  height: auto; // Reset height
+}
+.react-player {
+  padding-top: 56.25%; // Percentage ratio for 16:9
+  position: relative; // Set to relative
+}
+
+.react-player > div {
+  position: absolute; // Scaling will occur since parent is relative now
+} */
+/* .player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;  
+} */
+
+/* .react-player {
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+} */
 
 `;
 /* harmony default export */ __webpack_exports__["default"] = (GlobalStyle);

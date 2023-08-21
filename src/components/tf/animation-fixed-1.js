@@ -159,6 +159,11 @@ const YellowSml = styled.div`
   animation-fill-mode: forwards;
   animation-direction: alternate;
   z-index: 1000;
+  @media (max-width: 666px) {
+    width: calc(25vw - 10px);
+    height: calc(25vw - 10px);
+    left: calc(25vw + 7.5px);
+  }
 `;
 const white_right_ani = keyframes`
   0% {
@@ -314,6 +319,11 @@ const WhiteSml = styled.div`
   animation-fill-mode: forwards;
   animation-direction: alternate;
   z-index: 1000;
+  @media (max-width: 666px) {
+    width: calc(25vw - 10px);
+    height: calc(25vw - 10px);
+    left: calc(25vw + 7.5px);
+  }
 `;
 export const AnimationFixed1 = () => {
   return (

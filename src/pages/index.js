@@ -17,6 +17,8 @@ import Icon from "../../assets/G4C_kern_black.svg";
 import { AnimationFixed1 } from "../components/tf/animation-fixed-1";
 import { VideoComponent } from "../components/tf/zz/video_component_with_controls";
 import { VideoComponentNoControls } from "../components/tf/zz/video-component-no-controls";
+
+import { Nav } from "../components/tf/nav";
 // import Plyr from "plyr";
 // import "plyr/dist/plyr.css";
 
@@ -34,6 +36,7 @@ const Grid16 = styled.div`
 
   @media (max-width: 666px) {
     grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 5px;
   }
 `;
 
@@ -47,6 +50,7 @@ const LogoCon = styled.div`
   }
   @media (max-width: 666px) {
     width: 50%;
+    /* margin: 5px; */
   }
 `;
 const IntroCon = styled.div`
@@ -66,7 +70,7 @@ const AboutCon = styled.div`
 `;
 
 const SmallAboutP = styled.p`
-  font-family: "DecimaMonoPro";
+  font-family: "DecimaMonoPro", sans-serif;
   font-size: 6px;
   letter-spacing: -2%;
 `;
@@ -95,6 +99,7 @@ const SizzleVid = styled.video`
 `;
 const MobileSizzleVidConCon = styled.div`
   margin: 10px;
+  /* margin: 5px; */
   position: absolute;
   bottom: 0;
 `;
@@ -125,7 +130,7 @@ const ContactInfoCon = styled.div`
   }
 `;
 const DecimaP = styled.div`
-  font-family: "DecimaMonoPro";
+  font-family: "DecimaMonoPro", sans-serif;
   font-size: 12px;
   letter-spacing: -2%;
 `;
@@ -143,7 +148,7 @@ const AddressCon = styled.div`
 `;
 const DecimaPCon = styled.div`
   p {
-    font-family: "DecimaMonoPro";
+    font-family: "DecimaMonoPro", sans-serif;
     font-size: 12px;
     letter-spacing: -2%;
   }
@@ -167,7 +172,7 @@ const PageLinksCon = styled.div`
   }
 `;
 const PageLinks = styled.p`
-  font-family: "Helvetica Neue LT Pro";
+  font-family: "Helvetica Neue LT Pro", sans-serif;
   font-size: 32px;
   font-weight: bold;
   letter-spacing: -2%;
@@ -175,7 +180,7 @@ const PageLinks = styled.p`
 `;
 const HelveticaLrgCon = styled.div`
   p {
-    font-family: "Helvetica Neue LT Pro";
+    font-family: "Helvetica Neue LT Pro", sans-serif;
     font-size: 32px;
     font-weight: bold;
     letter-spacing: -2%;
@@ -204,6 +209,9 @@ const ESTCon = styled.div`
 const ContentsCon = styled.div`
   margin-bottom: 200px;
   margin-left: 10px;
+  @media (max-width: 666px) {
+    margin-left: 5px;
+  }
 `;
 
 const ProjectInfoCon = styled.div`
@@ -211,6 +219,10 @@ const ProjectInfoCon = styled.div`
   margin-left: 10px;
   margin-top: 100px;
   margin-bottom: 100px;
+  @media (max-width: 666px) {
+    /* width: calc(100% - 10px);
+    margin-left: 5px; */
+  }
 `;
 const Col1 = styled.div`
   grid-column: span 4;
@@ -240,6 +252,8 @@ const FourImgCon = styled.div`
   @media (max-width: 666px) {
     margin-top: 0px;
     margin-bottom: 0px;
+    /* width: calc(100% - 10px);
+    margin-left: 5px; */
   }
 `;
 const FourImgImgCon = styled.div`
@@ -263,6 +277,8 @@ const TwoImgCon = styled.div`
   @media (max-width: 666px) {
     margin-top: 0px;
     margin-bottom: 0px;
+    /* width: calc(100% - 10px);
+    margin-left: 5px; */
   }
 `;
 const TwoImgImgCon = styled.div`
@@ -283,6 +299,10 @@ const StatementCon = styled.div`
   margin-left: 10px;
   margin-top: 100px;
   margin-bottom: 100px;
+  @media (max-width: 666px) {
+    /* width: calc(100% - 10px);
+    margin-left: 5px; */
+  }
 `;
 const Statement1Con = styled.div`
   grid-column: span 8;
@@ -303,6 +323,8 @@ const VideoConCon = styled.div`
     /* grid-column: span 4; */
     margin-top: 0px;
     margin-bottom: 0px;
+    /* width: calc(100% - 10px);
+    margin-left: 5px; */
   }
 `;
 const VideoCon = styled.div`
@@ -367,7 +389,10 @@ const Index = ({ data }) => {
         return (
           <div onClick={handleClickScroll}>
             <PageLinks>
-              0{index + 1}{" "}
+              {
+                content.project_relationship_field.document.data.index_number
+                  .text
+              }{" "}
               {content.project_relationship_field.document.data.title.text}
             </PageLinks>
           </div>
@@ -554,60 +579,129 @@ const Index = ({ data }) => {
               }
 
               // const player = new Plyr("#player");
-              return (
-                <VideoConCon>
-                  <Grid16>
-                    <VideoCon>
-                      <VideoConInner
-                        style={
-                          inner1background
-                            ? { backgroundColor: "black" }
-                            : { backgroundColor: "none" }
-                        }
-                      >
-                        <VideoConInner2>
-                          <ReactPlayer
-                            className="react-player"
-                            width="100%"
-                            height="100%"
-                            // height="56.25"
-                            controls={true}
-                            url={content_four.primary.video_url_1.url}
-                          ></ReactPlayer>
-                          {/* <VideoComponent
-                            source={content_four.primary.video_url_1.url}
-                          ></VideoComponent> */}
-                        </VideoConInner2>
-                      </VideoConInner>
+              if (isPageWide) {
+                return (
+                  <VideoConCon>
+                    <Grid16>
+                      <VideoCon>
+                        <VideoConInner
+                          style={
+                            inner1background
+                              ? { backgroundColor: "black" }
+                              : { backgroundColor: "none" }
+                          }
+                        >
+                          <VideoConInner2>
+                            <ReactPlayer
+                              className="react-player"
+                              width="100%"
+                              height="100%"
+                              // height="56.25"
+                              controls={true}
+                              url={content_four.primary.video_url_1.url}
+                            ></ReactPlayer>
+                            {/* <VideoComponent
+                              source={content_four.primary.video_url_1.url}
+                            ></VideoComponent> */}
+                          </VideoConInner2>
+                        </VideoConInner>
 
-                      <DecimaP>Testing</DecimaP>
-                    </VideoCon>
+                        <DecimaP>
+                          {content_four.primary.video_caption_1.text}
+                        </DecimaP>
+                      </VideoCon>
 
-                    <VideoCon>
-                      <VideoConInner
-                        style={
-                          inner2background
-                            ? { backgroundColor: "black" }
-                            : { backgroundColor: "none" }
-                        }
-                      >
-                        <VideoConInner2>
-                          <ReactPlayer
-                            className="react-player"
-                            width="100%"
-                            height="100%"
-                            // height="56.25"
-                            controls={true}
-                            url={content_four.primary.video_url_2.url}
-                          ></ReactPlayer>
-                        </VideoConInner2>
-                      </VideoConInner>
+                      <VideoCon>
+                        <VideoConInner
+                          style={
+                            inner2background
+                              ? { backgroundColor: "black" }
+                              : { backgroundColor: "none" }
+                          }
+                        >
+                          <VideoConInner2>
+                            <ReactPlayer
+                              className="react-player"
+                              width="100%"
+                              height="100%"
+                              // height="56.25"
+                              controls={true}
+                              url={content_four.primary.video_url_2.url}
+                            ></ReactPlayer>
+                          </VideoConInner2>
+                        </VideoConInner>
 
-                      <DecimaP>Testing</DecimaP>
-                    </VideoCon>
-                  </Grid16>
-                </VideoConCon>
-              );
+                        <DecimaP>
+                          {content_four.primary.video_caption_2.text}
+                        </DecimaP>
+                      </VideoCon>
+                    </Grid16>
+                  </VideoConCon>
+                );
+              } else {
+                return (
+                  <VideoConCon>
+                    <Grid16>
+                      {inner1background ? (
+                        <VideoCon>
+                          <VideoConInner
+                            style={
+                              inner1background
+                                ? { backgroundColor: "black" }
+                                : { backgroundColor: "none" }
+                            }
+                          >
+                            <VideoConInner2>
+                              <ReactPlayer
+                                className="react-player"
+                                width="100%"
+                                height="100%"
+                                // height="56.25"
+                                controls={true}
+                                url={content_four.primary.video_url_1.url}
+                              ></ReactPlayer>
+                            </VideoConInner2>
+                          </VideoConInner>
+
+                          <DecimaP>
+                            {content_four.primary.video_caption_1.text}
+                          </DecimaP>
+                        </VideoCon>
+                      ) : (
+                        ""
+                      )}
+                      {inner2background ? (
+                        <VideoCon>
+                          <VideoConInner
+                            style={
+                              inner1background
+                                ? { backgroundColor: "black" }
+                                : { backgroundColor: "none" }
+                            }
+                          >
+                            <VideoConInner2>
+                              <ReactPlayer
+                                className="react-player"
+                                width="100%"
+                                height="100%"
+                                // height="56.25"
+                                controls={true}
+                                url={content_four.primary.video_url_2.url}
+                              ></ReactPlayer>
+                            </VideoConInner2>
+                          </VideoConInner>
+
+                          <DecimaP>
+                            {content_four.primary.video_caption_2.text}
+                          </DecimaP>
+                        </VideoCon>
+                      ) : (
+                        ""
+                      )}
+                    </Grid16>
+                  </VideoConCon>
+                );
+              }
             }
           }
         );
@@ -620,6 +714,10 @@ const Index = ({ data }) => {
                 <BoldTitleCon>
                   <HelveticaLrgCon>
                     <p>
+                      {
+                        content.project_relationship_field.document.data
+                          .index_number.text
+                      }{" "}
                       {
                         content.project_relationship_field.document.data.title
                           .text
@@ -773,58 +871,11 @@ const Index = ({ data }) => {
           </Grid16>
         </IntroCon>
 
-        <NavCon>
-          <Grid16>
-            <ContactTitleCon>
-              <DecimaP>Email:</DecimaP>
-              <DecimaP>Web:</DecimaP>
-              <DecimaP>Phone:</DecimaP>
-            </ContactTitleCon>
-            <ContactInfoCon>
-              <DecimaP>{data.prismicAbout.data.email.text}</DecimaP>
-              <DecimaP>{data.prismicAbout.data.web.text}</DecimaP>
-              <DecimaP>{data.prismicAbout.data.phone.text}</DecimaP>
-            </ContactInfoCon>
-            <AddressTitleCon>
-              <DecimaP>Address:</DecimaP>
-            </AddressTitleCon>
-            <AddressCon>
-              <DecimaPCon>
-                <div
-                  dangerouslySetInnerHTML={{
-                    __html: data.prismicAbout.data.address.html,
-                  }}
-                />
-              </DecimaPCon>
-            </AddressCon>
-            <SocialsTitleCon>
-              <DecimaP>Socials</DecimaP>
-            </SocialsTitleCon>
-            <SocialsLinksCon>
-              <DecimaP>Instagram</DecimaP>
-              <DecimaP>Twitter</DecimaP>
-              <DecimaP>LinkedIn</DecimaP>
-            </SocialsLinksCon>
-            <PageLinksCon>
-              <PageLinks>(Selected)</PageLinks>
-              <PageLinks>About</PageLinks>
-              <PageLinks>Archive</PageLinks>
-            </PageLinksCon>
-            <CodeCon>
-              <PageLinks style={{ fontSize: "12px" }}>TRX11-122</PageLinks>
-            </CodeCon>
-            <GMTCon>
-              <DecimaP>GMT 14:52</DecimaP>
-            </GMTCon>
-            <ESTCon>
-              <DecimaP>EST 20:52</DecimaP>
-            </ESTCon>
-          </Grid16>
-        </NavCon>
+        <Nav />
 
-        <LogoCon>
+        {/* <LogoCon>
           <Icon style={{ width: "100%", height: "100%" }}></Icon>
-        </LogoCon>
+        </LogoCon> */}
         <ContentsCon>{contents2}</ContentsCon>
 
         <ProjectsCon>{overview}</ProjectsCon>
@@ -877,6 +928,9 @@ export const query = graphql`
                   title {
                     text
                     html
+                  }
+                  index_number {
+                    text
                   }
                   about {
                     html
