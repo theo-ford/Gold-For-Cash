@@ -62,7 +62,7 @@ module.exports = {
           statement: require("./src/schemas/statement.json"),
           // category: require("./src/schemas/category.json"),
           homepage: require("./src/schemas/homepage.json"),
-          // now: require("./src/schemas/now.json"),
+          archive: require("./src/schemas/archive.json"),
         },
         imageImgixParams: {
           auto: "format",

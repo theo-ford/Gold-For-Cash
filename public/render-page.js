@@ -1,12 +1,12 @@
 (function webpackUniversalModuleDefinition(root, factory) {
 	if(typeof exports === 'object' && typeof module === 'object')
-		module.exports = factory(require("/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/04 G4C/Gold-For-Cash/node_modules/@reach/router/index.js"), require("crypto"), require("fs"), require("http"), require("https"), require("/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/04 G4C/Gold-For-Cash/node_modules/lodash/merge.js"), require("path"), require("react"), require("react-dom/server"), require("react-helmet"), require("zlib"));
+		module.exports = factory(require("/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/Gold-For-Cash/node_modules/@reach/router/index.js"), require("crypto"), require("fs"), require("http"), require("https"), require("/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/Gold-For-Cash/node_modules/lodash/merge.js"), require("path"), require("react"), require("react-dom/server"), require("react-helmet"), require("zlib"));
 	else if(typeof define === 'function' && define.amd)
-		define("lib", ["/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/04 G4C/Gold-For-Cash/node_modules/@reach/router/index.js", "crypto", "fs", "http", "https", "/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/04 G4C/Gold-For-Cash/node_modules/lodash/merge.js", "path", "react", "react-dom/server", "react-helmet", "zlib"], factory);
+		define("lib", ["/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/Gold-For-Cash/node_modules/@reach/router/index.js", "crypto", "fs", "http", "https", "/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/Gold-For-Cash/node_modules/lodash/merge.js", "path", "react", "react-dom/server", "react-helmet", "zlib"], factory);
 	else if(typeof exports === 'object')
-		exports["lib"] = factory(require("/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/04 G4C/Gold-For-Cash/node_modules/@reach/router/index.js"), require("crypto"), require("fs"), require("http"), require("https"), require("/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/04 G4C/Gold-For-Cash/node_modules/lodash/merge.js"), require("path"), require("react"), require("react-dom/server"), require("react-helmet"), require("zlib"));
+		exports["lib"] = factory(require("/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/Gold-For-Cash/node_modules/@reach/router/index.js"), require("crypto"), require("fs"), require("http"), require("https"), require("/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/Gold-For-Cash/node_modules/lodash/merge.js"), require("path"), require("react"), require("react-dom/server"), require("react-helmet"), require("zlib"));
 	else
-		root["lib"] = factory(root["/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/04 G4C/Gold-For-Cash/node_modules/@reach/router/index.js"], root["crypto"], root["fs"], root["http"], root["https"], root["/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/04 G4C/Gold-For-Cash/node_modules/lodash/merge.js"], root["path"], root["react"], root["react-dom/server"], root["react-helmet"], root["zlib"]);
+		root["lib"] = factory(root["/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/Gold-For-Cash/node_modules/@reach/router/index.js"], root["crypto"], root["fs"], root["http"], root["https"], root["/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/Gold-For-Cash/node_modules/lodash/merge.js"], root["path"], root["react"], root["react-dom/server"], root["react-helmet"], root["zlib"]);
 })(this, function(__WEBPACK_EXTERNAL_MODULE__reach_router__, __WEBPACK_EXTERNAL_MODULE_crypto__, __WEBPACK_EXTERNAL_MODULE_fs__, __WEBPACK_EXTERNAL_MODULE_http__, __WEBPACK_EXTERNAL_MODULE_https__, __WEBPACK_EXTERNAL_MODULE_lodash_merge__, __WEBPACK_EXTERNAL_MODULE_path__, __WEBPACK_EXTERNAL_MODULE_react__, __WEBPACK_EXTERNAL_MODULE_react_dom_server__, __WEBPACK_EXTERNAL_MODULE_react_helmet__, __WEBPACK_EXTERNAL_MODULE_zlib__) {
 return /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -501,6 +501,26 @@ var plugins = [{
             }
           }
         }
+      },
+      "archive": {
+        "Main": {
+          "archive_relationship_group": {
+            "type": "Group",
+            "config": {
+              "fields": {
+                "archive_relationship_field": {
+                  "type": "Link",
+                  "config": {
+                    "select": "document",
+                    "customtypes": ["project", "statement"],
+                    "label": "Archive Relationship Field"
+                  }
+                }
+              },
+              "label": "Archive Relationship Group"
+            }
+          }
+        }
       }
     },
     "imageImgixParams": {
@@ -511,7 +531,7 @@ var plugins = [{
   plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-layout/gatsby-ssr */ "./node_modules/gatsby-plugin-layout/gatsby-ssr.js"),
   options: {
     "plugins": [],
-    "component": "/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/04 G4C/Gold-For-Cash/src/components/global/layout.js"
+    "component": "/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/Gold-For-Cash/src/components/global/layout.js"
   }
 }, {
   plugin: __webpack_require__(/*! ./gatsby-ssr */ "./gatsby-ssr.js"),
@@ -23605,7 +23625,7 @@ try {
   Layout = preferDefault(__webpack_require__(/*! ./src/components/global/layout.js */ "./src/components/global/layout.js"));
 } catch (e) {
   if (e.toString().indexOf("Error: Cannot find module") !== -1) {
-    throw new Error("Couldn't find layout component at \"" + "/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/04 G4C/Gold-For-Cash/src/components/global/layout.js" + ".\n\n" + "Please create layout component in that location or specify path to layout component in gatsby-config.js");
+    throw new Error("Couldn't find layout component at \"" + "/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/Gold-For-Cash/src/components/global/layout.js" + ".\n\n" + "Please create layout component in that location or specify path to layout component in gatsby-config.js");
   } else {
     // Logging the error for debugging older browsers as there is no way
     // to wrap the thrown error in a try/catch.
@@ -35718,9 +35738,9 @@ h1.navRight {
 /***/ }),
 
 /***/ "@reach/router":
-/*!********************************************************************************************************************************************************!*\
-  !*** external "/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/04 G4C/Gold-For-Cash/node_modules/@reach/router/index.js" ***!
-  \********************************************************************************************************************************************************/
+/*!*************************************************************************************************************************************************!*\
+  !*** external "/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/Gold-For-Cash/node_modules/@reach/router/index.js" ***!
+  \*************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
@@ -35773,9 +35793,9 @@ module.exports = __WEBPACK_EXTERNAL_MODULE_https__;
 /***/ }),
 
 /***/ "lodash/merge":
-/*!*************************************************************************************************************************************************!*\
-  !*** external "/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/04 G4C/Gold-For-Cash/node_modules/lodash/merge.js" ***!
-  \*************************************************************************************************************************************************/
+/*!******************************************************************************************************************************************!*\
+  !*** external "/Users/theodoreford/Documents/01_projects/Oliver De Vitre/00 React/02 Builds/Gold-For-Cash/node_modules/lodash/merge.js" ***!
+  \******************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports) {
 
