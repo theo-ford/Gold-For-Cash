@@ -3,6 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 import { withPreview } from "gatsby-source-prismic";
 import styled, { createGlobalStyle } from "styled-components";
 import Icon from "../../../assets/G4C_kern_black.svg";
+import { DateTime } from "luxon";
 
 const SmallAboutP = styled.p`
   font-family: "DecimaMonoPro", sans-serif;
@@ -136,6 +137,7 @@ const ESTCon = styled.div`
 export const Nav = ({}) => {
   console.log("GIT BEFORE NPM");
   var [currentPage, setCurrentPage] = useState(null);
+  var [pstState, setPstState] = useState(null);
 
   useEffect(() => {
     var inputString = window.location.href;
@@ -170,6 +172,9 @@ export const Nav = ({}) => {
       }
     }
   `);
+  var pst = DateTime.now().setZone("America/Los_Angeles");
+  var cet = DateTime.now().setZone("Europe/Berlin");
+
   return (
     <>
       <NavCon>
@@ -234,13 +239,19 @@ export const Nav = ({}) => {
             </PageLinks>
           </PageLinksCon>
           <CodeCon>
-            <PageLinks style={{ fontSize: "12px" }}>TRX11-122</PageLinks>
+            <PageLinks style={{ fontSize: "12px", fontWeight: "bold" }}>
+              TRX11-122
+            </PageLinks>
           </CodeCon>
           <GMTCon>
-            <DecimaP>GMT 14:52</DecimaP>
+            <DecimaP>
+              PST {pst.hour}:{pst.minute}
+            </DecimaP>
           </GMTCon>
           <ESTCon>
-            <DecimaP>EST 20:52</DecimaP>
+            <DecimaP>
+              CET {cet.hour}:{cet.minute}
+            </DecimaP>
           </ESTCon>
         </Grid16>
       </NavCon>
