@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 import { withPreview } from "gatsby-source-prismic";
 import styled, { createGlobalStyle } from "styled-components";
 import Icon from "../../../assets/G4C_kern_black.svg";
-// import { DateTime } from "luxon";
+import { DateTime } from "luxon";
 
 const SmallAboutP = styled.p`
   font-family: "DecimaMonoPro", sans-serif;
@@ -171,8 +171,8 @@ export const Nav = ({}) => {
       }
     }
   `);
-  // var pst = DateTime.now().setZone("America/Los_Angeles");
-  // var cet = DateTime.now().setZone("Europe/Berlin");
+  var pst = DateTime.now().setZone("America/Los_Angeles");
+  var cet = DateTime.now().setZone("Europe/Berlin");
 
   return (
     <>
@@ -243,10 +243,14 @@ export const Nav = ({}) => {
             </PageLinks>
           </CodeCon>
           <GMTCon>
-            <DecimaP>{/* PST {pst.hour}:{pst.minute} */}</DecimaP>
+            <DecimaP>
+              PST {pst.hour}:{pst.minute}
+            </DecimaP>
           </GMTCon>
           <ESTCon>
-            <DecimaP>{/* CET {cet.hour}:{cet.minute} */}</DecimaP>
+            <DecimaP>
+              CET {cet.hour}:{cet.minute}
+            </DecimaP>
           </ESTCon>
         </Grid16>
       </NavCon>
