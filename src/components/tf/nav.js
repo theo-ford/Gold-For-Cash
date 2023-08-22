@@ -134,7 +134,7 @@ const ESTCon = styled.div`
   }
 `;
 export const Nav = ({}) => {
-  console.log("GIT TEST");
+  console.log("GIT BEFORE NPM");
   var [currentPage, setCurrentPage] = useState(null);
 
   useEffect(() => {
