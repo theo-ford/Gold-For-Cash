@@ -190,6 +190,8 @@ export const Nav = ({}) => {
     .split(":")
     .splice(0, 2);
   const berlinResult = berlinSplitted.join(":");
+
+  console.log("remove luxon");
   return (
     <>
       <NavCon>
