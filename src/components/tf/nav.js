@@ -3,7 +3,7 @@ import { useStaticQuery, graphql, Link } from "gatsby";
 import { withPreview } from "gatsby-source-prismic";
 import styled, { createGlobalStyle } from "styled-components";
 import Icon from "../../../assets/G4C_kern_black.svg";
-import { DateTime } from "luxon";
+// import { DateTime } from "luxon";
 
 const SmallAboutP = styled.p`
   font-family: "DecimaMonoPro", sans-serif;
