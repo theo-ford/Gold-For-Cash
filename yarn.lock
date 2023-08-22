@@ -11729,6 +11729,11 @@
   dependencies:
     "es5-ext" "~0.10.2"
 
+"luxon@^3.4.0":
+  "integrity" "sha512-7eDo4Pt7aGhoCheGFIuq4Xa2fJm4ZpmldpGhjTYBNUYNCN6TIEP6v7chwwwt3KRp7YR+rghbfvjyo3V5y9hgBw=="
+  "resolved" "https://registry.npmjs.org/luxon/-/luxon-3.4.0.tgz"
+  "version" "3.4.0"
+
 "magic-string@^0.25.0", "magic-string@^0.25.7":
   "integrity" "sha512-RmF0AsMzgt25qzqqLc1+MbHmhdx0ojF2Fvs4XnOqz2ZOBXzzkEwc/dJQZCYHAn7v1jbVOjAZfK8msRn4BxO4VQ=="
   "resolved" "https://registry.npmjs.org/magic-string/-/magic-string-0.25.9.tgz"
