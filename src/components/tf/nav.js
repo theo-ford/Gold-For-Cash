@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState, useRef } from "react";
 import { useStaticQuery, graphql, Link } from "gatsby";
 import { withPreview } from "gatsby-source-prismic";
 import styled, { createGlobalStyle } from "styled-components";
@@ -135,6 +135,20 @@ const ESTCon = styled.div`
 `;
 export const Nav = ({}) => {
   console.log("GIT TEST");
+  var [currentPage, setCurrentPage] = useState(null);
+
+  useEffect(() => {
+    var inputString = window.location.href;
+    var outputString = inputString.replace(/.*\//, "");
+    if (outputString == "") {
+      setCurrentPage("index");
+    } else if (outputString == "archive") {
+      setCurrentPage(outputString);
+    } else if (outputString == "about") {
+      setCurrentPage(outputString);
+    }
+  }, [setCurrentPage]);
+
   const data = useStaticQuery(graphql`
     query MyQuery6 {
       prismicAbout {
@@ -192,13 +206,31 @@ export const Nav = ({}) => {
           </SocialsLinksCon>
           <PageLinksCon>
             <PageLinks>
-              <Link to="/">(Selected)</Link>
+              <Link to="/">
+                {currentPage == "index" ? (
+                  <span>(Selected)</span>
+                ) : (
+                  <span>Selected</span>
+                )}
+              </Link>
             </PageLinks>
             <PageLinks>
-              <Link to="/about">About</Link>
+              <Link to="/about">
+                {currentPage == "about" ? (
+                  <span>(About)</span>
+                ) : (
+                  <span>About</span>
+                )}
+              </Link>
             </PageLinks>
             <PageLinks>
-              <Link to="/archive">Archive</Link>
+              <Link to="/archive">
+                {currentPage == "archive" ? (
+                  <span>(Archive)</span>
+                ) : (
+                  <span>Archive</span>
+                )}
+              </Link>
             </PageLinks>
           </PageLinksCon>
           <CodeCon>
