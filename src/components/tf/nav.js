@@ -173,7 +173,23 @@ export const Nav = ({}) => {
   `);
   // var pst = DateTime.now().setZone("America/Los_Angeles");
   // var cet = DateTime.now().setZone("Europe/Berlin");
+  const dt = new Date();
 
+  const la = dt.toLocaleString("en-US", { timeZone: "America/Los_Angeles" });
+  const laSplitted = la
+    .toLocaleString()
+    .split(" ")[1]
+    .split(":")
+    .splice(0, 2);
+  const laResult = laSplitted.join(":");
+
+  const berlin = dt.toLocaleString("en-IN", { timeZone: "Europe/Berlin" });
+  const berlinSplitted = berlin
+    .toLocaleString()
+    .split(" ")[1]
+    .split(":")
+    .splice(0, 2);
+  const berlinResult = berlinSplitted.join(":");
   return (
     <>
       <NavCon>
@@ -243,10 +259,16 @@ export const Nav = ({}) => {
             </PageLinks>
           </CodeCon>
           <GMTCon>
-            <DecimaP>{/* PST {pst.hour}:{pst.minute} */}</DecimaP>
+            <DecimaP>
+              PST {laResult}
+              {/* PST {pst.hour}:{pst.minute} */}
+            </DecimaP>
           </GMTCon>
           <ESTCon>
-            <DecimaP>{/* CET {cet.hour}:{cet.minute} */}</DecimaP>
+            <DecimaP>
+              CET {berlinResult}
+              {/* CET {cet.hour}:{cet.minute} */}
+            </DecimaP>
           </ESTCon>
         </Grid16>
       </NavCon>
