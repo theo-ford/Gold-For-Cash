@@ -137,7 +137,6 @@ const ESTCon = styled.div`
 export const Nav = ({}) => {
   console.log("GIT BEFORE NPM");
   var [currentPage, setCurrentPage] = useState(null);
-  var [pstState, setPstState] = useState(null);
 
   useEffect(() => {
     var inputString = window.location.href;
@@ -172,8 +171,8 @@ export const Nav = ({}) => {
       }
     }
   `);
-  var pst = DateTime.now().setZone("America/Los_Angeles");
-  var cet = DateTime.now().setZone("Europe/Berlin");
+  // var pst = DateTime.now().setZone("America/Los_Angeles");
+  // var cet = DateTime.now().setZone("Europe/Berlin");
 
   return (
     <>
@@ -244,14 +243,10 @@ export const Nav = ({}) => {
             </PageLinks>
           </CodeCon>
           <GMTCon>
-            <DecimaP>
-              PST {pst.hour}:{pst.minute}
-            </DecimaP>
+            <DecimaP>{/* PST {pst.hour}:{pst.minute} */}</DecimaP>
           </GMTCon>
           <ESTCon>
-            <DecimaP>
-              CET {cet.hour}:{cet.minute}
-            </DecimaP>
+            <DecimaP>{/* CET {cet.hour}:{cet.minute} */}</DecimaP>
           </ESTCon>
         </Grid16>
       </NavCon>
