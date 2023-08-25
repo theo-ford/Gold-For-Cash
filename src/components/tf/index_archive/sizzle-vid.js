@@ -22,6 +22,9 @@ const HeroCon = styled.div`
   /* background-color: red; */
   position: relative;
   float: left;
+  @media (max-width: 666px) {
+    height: 100%;
+  }
 `;
 
 const SizzleVidConCon = styled.div`
