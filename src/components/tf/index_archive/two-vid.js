@@ -24,8 +24,8 @@ const VideoConCon = styled.div`
 
   @media (max-width: 666px) {
     /* grid-column: span 4; */
-    margin-top: 0px;
-    margin-bottom: 0px;
+    margin-top: 100px;
+    margin-bottom: 100px;
     /* width: calc(100% - 10px);
     margin-left: 5px; */
   }
@@ -44,11 +44,13 @@ const VideoConInner = styled.div`
   /* padding-top: 56.25%;
   position: relative; */
   /* background-color: black; */
+  margin-bottom: 5px;
 `;
 const VideoConInner2 = styled.div`
   /* position: absolute; */
   position: relative;
   padding-top: 56.25%;
+
   /* background-color: black; */
   .react-player {
     position: absolute;

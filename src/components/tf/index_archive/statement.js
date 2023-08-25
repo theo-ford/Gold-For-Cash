@@ -19,7 +19,7 @@ const HelveticaLrgCon = styled.div`
     font-family: "Helvetica Neue LT Pro", sans-serif;
     font-size: 32px;
     font-weight: bold;
-    letter-spacing: -2%;
+    letter-spacing: -0.4px;
     line-height: 112.5%;
   }
 `;
