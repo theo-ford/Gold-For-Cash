@@ -78,6 +78,14 @@ const DecimaPCon = styled.div`
     font-size: 12px;
     letter-spacing: -0.2%;
   }
+  a {
+    font-family: "DecimaMonoPro", sans-serif;
+    font-size: 12px;
+    letter-spacing: -0.2%;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+  }
 `;
 const SocialsTitleCon = styled.div`
   grid-column: span 1;
@@ -167,6 +175,15 @@ export const Nav = ({}) => {
           web {
             text
           }
+          instagram {
+            url
+          }
+          twitter {
+            url
+          }
+          linked_in {
+            url
+          }
         }
       }
     }
@@ -219,12 +236,24 @@ export const Nav = ({}) => {
             </DecimaPCon>
           </AddressCon>
           <SocialsTitleCon>
-            <DecimaP>Socials</DecimaP>
+            <DecimaP>Socials:</DecimaP>
           </SocialsTitleCon>
           <SocialsLinksCon>
-            <DecimaP>Instagram</DecimaP>
-            <DecimaP>Twitter</DecimaP>
-            <DecimaP>LinkedIn</DecimaP>
+            <>
+              <Link to={data.prismicAbout.data.instagram.url}>
+                <DecimaP>Instagram</DecimaP>
+              </Link>
+            </>
+            <>
+              <Link to={data.prismicAbout.data.twitter.url}>
+                <DecimaP>Twitter</DecimaP>
+              </Link>
+            </>
+            <>
+              <Link to={data.prismicAbout.data.linked_in.url}>
+                <DecimaP>LinkedIn</DecimaP>
+              </Link>
+            </>
           </SocialsLinksCon>
           <PageLinksCon>
             <PageLinks>

@@ -383,6 +383,24 @@ var plugins = [{
               "label": "Address"
             }
           },
+          "instagram": {
+            "type": "Link",
+            "config": {
+              "label": "Instagram"
+            }
+          },
+          "twitter": {
+            "type": "Link",
+            "config": {
+              "label": "Twitter"
+            }
+          },
+          "linked_in": {
+            "type": "Link",
+            "config": {
+              "label": "Linked In"
+            }
+          },
           "bio": {
             "type": "StructuredText",
             "config": {
