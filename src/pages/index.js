@@ -196,7 +196,7 @@ export const query = graphql`
                     html
                     text
                   }
-                  agency {
+                  project_type {
                     html
                     text
                   }

@@ -85,19 +85,20 @@ export const ProjectInfo = ({ data }) => {
           <DecimaPCon>
             <p>
               Project: <br></br>
-              {data.data.title.text}
+              {data.data.project_type.text}
               <br></br>
               <br></br>
             </p>
           </DecimaPCon>
+        </Col1>
+        <Col2>
           <DecimaPCon>
             <p>
               Client:<br></br>
               {data.data.client.text}
             </p>
+            <br></br>
           </DecimaPCon>
-        </Col1>
-        <Col2>
           <DecimaPCon>
             <p>Team:</p>
             <div
@@ -106,12 +107,6 @@ export const ProjectInfo = ({ data }) => {
               }}
             />
             <br></br>
-          </DecimaPCon>
-          <DecimaPCon>
-            <p>
-              Agency:<br></br>
-              {data.data.agency.text}
-            </p>
           </DecimaPCon>
         </Col2>
         <Col3>

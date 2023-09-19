@@ -180,11 +180,11 @@ var plugins = [{
               "label": "team"
             }
           },
-          "agency": {
+          "project_type": {
             "type": "StructuredText",
             "config": {
-              "single": "paragraph",
-              "label": "Agency"
+              "multi": "paragraph",
+              "label": "project type"
             }
           },
           "about": {
@@ -35530,7 +35530,7 @@ input {
   border-radius: 0;
 }
 
-h1,h2,h3,h4,h5, p{
+h1,h2,h3,h4,h5, p, a{
   font-family: "Helvetica Neue LT Pro", sans-serif;
   font-weight: normal;
 
