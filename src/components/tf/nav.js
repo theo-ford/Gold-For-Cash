@@ -245,13 +245,13 @@ export const Nav = ({}) => {
               </Link>
             </>
             <>
-              <Link to={data.prismicAbout.data.twitter.url}>
-                <DecimaP>Twitter</DecimaP>
+              <Link to={data.prismicAbout.data.linked_in.url}>
+                <DecimaP>LinkedIn</DecimaP>
               </Link>
             </>
             <>
-              <Link to={data.prismicAbout.data.linked_in.url}>
-                <DecimaP>LinkedIn</DecimaP>
+              <Link to={data.prismicAbout.data.twitter.url}>
+                <DecimaP>X</DecimaP>
               </Link>
             </>
           </SocialsLinksCon>
@@ -286,7 +286,8 @@ export const Nav = ({}) => {
           </PageLinksCon>
           <CodeCon>
             <PageLinks style={{ fontSize: "12px", fontWeight: "bold" }}>
-              TRX11-122
+              33º 99’74” N<br></br>
+              118º 46’58” W
             </PageLinks>
           </CodeCon>
           <GMTCon>

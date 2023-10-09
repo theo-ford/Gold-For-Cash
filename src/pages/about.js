@@ -36,9 +36,7 @@ const BioConCon = styled.div`
 `;
 const BioCon = styled.div`
   grid-column: 9 / span 8;
-  @media (max-width: 666px) {
-    grid-column: 4;
-  }
+
   p {
     font-family: "Helvetica Neue LT Pro", sans-serif;
     font-size: 32px;
@@ -46,6 +44,13 @@ const BioCon = styled.div`
     letter-spacing: -0.4px;
     line-height: 112.5%;
     margin-bottom: 20px;
+  }
+  @media (max-width: 666px) {
+    grid-column: span 4;
+    margin-top: 200px;
+    p {
+      font-size: 24px;
+    }
   }
 `;
 const ListsConCon = styled.div`
@@ -57,14 +62,23 @@ const ListsConCon = styled.div`
     font-size: 12px;
     letter-spacing: -2%;
   }
+  @media (max-width: 666px) {
+    margin-top: 20px;
+  }
 `;
 
 const ClientsCon = styled.div`
   grid-column: 9 / span 4;
+  @media (max-width: 666px) {
+    grid-column: span 2;
+  }
 `;
 
 const AgenciesCon = styled.div`
   grid-column: 13 / span 4;
+  @media (max-width: 666px) {
+    grid-column: span 2;
+  }
 `;
 
 const PortraitConCon = styled.div`
@@ -77,6 +91,9 @@ const PortraitCon = styled.div`
   img {
     margin-bottom: 10px;
   }
+  @media (max-width: 666px) {
+    grid-column: span 4;
+  }
 `;
 
 const LogosConCon = styled.div`
@@ -88,6 +105,9 @@ const LogosCon = styled.div`
   grid-column: 11 / span 6;
   img {
     margin-bottom: 10px;
+  }
+  @media (max-width: 666px) {
+    grid-column: span 4;
   }
 `;
 
