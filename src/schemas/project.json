@@ -23,28 +23,28 @@
     "client": {
       "type": "StructuredText",
       "config": {
-        "single": "paragraph",
+        "single": "paragraph, hyperlink",
         "label": "client"
       }
     },
     "team": {
       "type": "StructuredText",
       "config": {
-        "multi": "paragraph,hyperlink",
+        "multi": "paragraph, hyperlink",
         "label": "team"
       }
     },
     "project_type": {
       "type": "StructuredText",
       "config": {
-        "multi": "paragraph",
+        "multi": "paragraph, hyperlink",
         "label": "project type"
       }
     },
     "about": {
       "type": "StructuredText",
       "config": {
-        "multi": "paragraph",
+        "multi": "paragraph, hyperlink",
         "label": "About"
       }
     },

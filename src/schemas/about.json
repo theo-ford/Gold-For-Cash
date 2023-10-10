@@ -31,19 +31,22 @@
     "instagram": {
       "type": "Link",
       "config": {
-        "label": "Instagram"
+        "label": "Instagram",
+        "select": null
       }
     },
     "twitter": {
       "type": "Link",
       "config": {
-        "label": "Twitter"
+        "label": "Twitter",
+        "select": null
       }
     },
     "linked_in": {
       "type": "Link",
       "config": {
-        "label": "Linked In"
+        "label": "Linked In",
+        "select": null
       }
     },
     "bio": {
@@ -56,14 +59,14 @@
     "clients": {
       "type": "StructuredText",
       "config": {
-        "multi": "list-item",
+        "multi": "hyperlink, list-item",
         "label": "Clients"
       }
     },
     "agencies": {
       "type": "StructuredText",
       "config": {
-        "multi": "o-list-item",
+        "multi": "hyperlink, list-item",
         "label": "Agencies"
       }
     },
@@ -95,6 +98,21 @@
       "config": {
         "single": "paragraph",
         "label": "Logos Gif Caption"
+      }
+    },
+    "awards_img": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Awards Img"
+      }
+    },
+    "awards_caption": {
+      "type": "StructuredText",
+      "config": {
+        "single": "paragraph,hyperlink",
+        "label": "Awards Caption"
       }
     }
   }

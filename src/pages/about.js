@@ -56,11 +56,17 @@ const BioCon = styled.div`
 const ListsConCon = styled.div`
   width: calc(100% - 20px);
   margin: 10px;
-  margin-top: 150px;
+  margin-top: 200px;
   p {
     font-family: "DecimaMonoPro", sans-serif;
     font-size: 12px;
     letter-spacing: -2%;
+  }
+  a {
+    font-family: "DecimaMonoPro", sans-serif;
+    font-size: 12px;
+    letter-spacing: -2%;
+    text-decoration: underline;
   }
   @media (max-width: 666px) {
     margin-top: 20px;
@@ -84,6 +90,7 @@ const AgenciesCon = styled.div`
 const PortraitConCon = styled.div`
   width: calc(100% - 20px);
   margin: 10px;
+  margin-bottom: 75px;
 `;
 
 const PortraitCon = styled.div`
@@ -99,10 +106,25 @@ const PortraitCon = styled.div`
 const LogosConCon = styled.div`
   width: calc(100% - 20px);
   margin: 10px;
-  margin-bottom: 150px;
+  margin-bottom: 75px;
 `;
 const LogosCon = styled.div`
   grid-column: 11 / span 6;
+  img {
+    margin-bottom: 10px;
+  }
+  @media (max-width: 666px) {
+    grid-column: span 4;
+  }
+`;
+const AwardsConCon = styled.div`
+  width: calc(100% - 20px);
+  margin: 10px;
+`;
+
+const AwardsCon = styled.div`
+  grid-column: span 8;
+  margin-bottom: 150px;
   img {
     margin-bottom: 10px;
   }
@@ -165,6 +187,14 @@ const About = ({ data }) => {
             </LogosCon>
           </Grid16>
         </LogosConCon>
+        <AwardsConCon>
+          <Grid16>
+            <AwardsCon>
+              <img src={data.prismicAbout.data.awards_img.fluid.src} />
+              <DecimaP>{data.prismicAbout.data.awards_caption.text}</DecimaP>
+            </AwardsCon>
+          </Grid16>
+        </AwardsConCon>
       </PageCon>
 
       <Nav></Nav>
@@ -209,6 +239,17 @@ export const query = graphql`
           }
         }
         portrait_caption {
+          html
+          text
+        }
+        awards_img {
+          fluid {
+            src
+            srcSetWebp
+            srcWebp
+          }
+        }
+        awards_caption {
           html
           text
         }

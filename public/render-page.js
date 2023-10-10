@@ -169,28 +169,28 @@ var plugins = [{
           "client": {
             "type": "StructuredText",
             "config": {
-              "single": "paragraph",
+              "single": "paragraph, hyperlink",
               "label": "client"
             }
           },
           "team": {
             "type": "StructuredText",
             "config": {
-              "multi": "paragraph,hyperlink",
+              "multi": "paragraph, hyperlink",
               "label": "team"
             }
           },
           "project_type": {
             "type": "StructuredText",
             "config": {
-              "multi": "paragraph",
+              "multi": "paragraph, hyperlink",
               "label": "project type"
             }
           },
           "about": {
             "type": "StructuredText",
             "config": {
-              "multi": "paragraph",
+              "multi": "paragraph, hyperlink",
               "label": "About"
             }
           },
@@ -386,19 +386,22 @@ var plugins = [{
           "instagram": {
             "type": "Link",
             "config": {
-              "label": "Instagram"
+              "label": "Instagram",
+              "select": null
             }
           },
           "twitter": {
             "type": "Link",
             "config": {
-              "label": "Twitter"
+              "label": "Twitter",
+              "select": null
             }
           },
           "linked_in": {
             "type": "Link",
             "config": {
-              "label": "Linked In"
+              "label": "Linked In",
+              "select": null
             }
           },
           "bio": {
@@ -411,14 +414,14 @@ var plugins = [{
           "clients": {
             "type": "StructuredText",
             "config": {
-              "multi": "list-item",
+              "multi": "hyperlink, list-item",
               "label": "Clients"
             }
           },
           "agencies": {
             "type": "StructuredText",
             "config": {
-              "multi": "o-list-item",
+              "multi": "hyperlink, list-item",
               "label": "Agencies"
             }
           },
@@ -450,6 +453,21 @@ var plugins = [{
             "config": {
               "single": "paragraph",
               "label": "Logos Gif Caption"
+            }
+          },
+          "awards_img": {
+            "type": "Image",
+            "config": {
+              "constraint": {},
+              "thumbnails": [],
+              "label": "Awards Img"
+            }
+          },
+          "awards_caption": {
+            "type": "StructuredText",
+            "config": {
+              "single": "paragraph,hyperlink",
+              "label": "Awards Caption"
             }
           }
         }

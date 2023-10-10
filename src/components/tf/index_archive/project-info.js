@@ -64,6 +64,12 @@ const DecimaPCon = styled.div`
     font-size: 12px;
     letter-spacing: -2%;
   }
+  a {
+    text-decoration: underline;
+    font-family: "DecimaMonoPro", sans-serif;
+    font-size: 12px;
+    letter-spacing: -2%;
+  }
 `;
 
 export const ProjectInfo = ({ data }) => {
@@ -83,20 +89,22 @@ export const ProjectInfo = ({ data }) => {
       <Grid16>
         <Col1>
           <DecimaPCon>
-            <p>
-              Project: <br></br>
-              {data.data.project_type.text}
-              <br></br>
-              <br></br>
-            </p>
+            <p>Project:</p>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.data.project_type.html,
+              }}
+            />
           </DecimaPCon>
         </Col1>
         <Col2>
           <DecimaPCon>
-            <p>
-              Client:<br></br>
-              {data.data.client.text}
-            </p>
+            <p>Client:</p>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: data.data.client.html,
+              }}
+            />
             <br></br>
           </DecimaPCon>
           <DecimaPCon>
