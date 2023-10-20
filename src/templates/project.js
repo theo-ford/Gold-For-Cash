@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { graphql, Link } from "gatsby";
-import { withPreview } from "gatsby-source-prismic";
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
 import { Helmet } from "react-helmet";
 import { ImageOrientation } from "../components/utils/image-orientation";
 import styled, { createGlobalStyle } from "styled-components";
@@ -13,7 +13,7 @@ const Project = ({ data }) => {
   return <p>testing</p>;
 };
 
-export default withPreview(Project);
+export default withPrismicPreview(Project);
 
 export const query = graphql`
   query Artists($uid: String!) {
