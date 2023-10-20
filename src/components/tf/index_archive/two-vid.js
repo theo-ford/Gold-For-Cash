@@ -39,6 +39,15 @@ const VideoCon = styled.div`
     margin-bottom: 100px; */
   }
 `;
+const VideoCon2 = styled.div`
+  grid-column: 9 / span 8;
+  /* background-color: red; */
+  @media (max-width: 666px) {
+    grid-column: 0 / span 4;
+    /* margin-top: 100px;
+    margin-bottom: 100px; */
+  }
+`;
 const VideoConInner = styled.div`
   width: 100%;
   /* padding-top: 56.25%;
@@ -76,13 +85,13 @@ export const TwoVid = ({ data }) => {
   var inner1background = null;
   var inner2background = null;
 
-  if (data.video_url_1.url == "") {
+  if (data.video_url_1 == null) {
     inner1background = null;
   } else {
     inner1background = true;
   }
 
-  if (data.video_url_2.url == "") {
+  if (data.video_url_2 == null) {
     inner2background = null;
   } else {
     inner2background = true;
@@ -93,54 +102,61 @@ export const TwoVid = ({ data }) => {
     return (
       <VideoConCon>
         <Grid16>
-          <VideoCon>
-            <VideoConInner
-              style={
-                inner1background
-                  ? { backgroundColor: "black" }
-                  : { backgroundColor: "none" }
-              }
-            >
-              <VideoConInner2>
-                <ReactPlayer
-                  className="react-player"
-                  width="100%"
-                  height="100%"
-                  // height="56.25"
-                  controls={true}
-                  url={data.video_url_1.url}
-                ></ReactPlayer>
-                {/* <VideoComponent
-                  source={content_four.primary.video_url_1.url}
-                ></VideoComponent> */}
-              </VideoConInner2>
-            </VideoConInner>
+          {inner1background ? (
+            <VideoCon>
+              <VideoConInner
+                style={
+                  inner1background
+                    ? { backgroundColor: "black" }
+                    : { backgroundColor: "none" }
+                }
+              >
+                <VideoConInner2>
+                  <ReactPlayer
+                    className="react-player"
+                    width="100%"
+                    height="100%"
+                    // height="56.25"
+                    controls={true}
+                    url={data.video_url_1.url}
+                  ></ReactPlayer>
+                  {/* <VideoComponent
+                    source={content_four.primary.video_url_1.url}
+                  ></VideoComponent> */}
+                </VideoConInner2>
+              </VideoConInner>
 
-            <DecimaP>{data.video_caption_1.text}</DecimaP>
-          </VideoCon>
+              <DecimaP>{data.video_caption_1.text}</DecimaP>
+            </VideoCon>
+          ) : (
+            ""
+          )}
+          {inner2background ? (
+            <VideoCon2>
+              <VideoConInner
+                style={
+                  inner2background
+                    ? { backgroundColor: "black" }
+                    : { backgroundColor: "none" }
+                }
+              >
+                <VideoConInner2>
+                  <ReactPlayer
+                    className="react-player"
+                    width="100%"
+                    height="100%"
+                    // height="56.25"
+                    controls={true}
+                    url={data.video_url_2.url}
+                  ></ReactPlayer>
+                </VideoConInner2>
+              </VideoConInner>
 
-          <VideoCon>
-            <VideoConInner
-              style={
-                inner2background
-                  ? { backgroundColor: "black" }
-                  : { backgroundColor: "none" }
-              }
-            >
-              <VideoConInner2>
-                <ReactPlayer
-                  className="react-player"
-                  width="100%"
-                  height="100%"
-                  // height="56.25"
-                  controls={true}
-                  url={data.video_url_2.url}
-                ></ReactPlayer>
-              </VideoConInner2>
-            </VideoConInner>
-
-            <DecimaP>{data.video_caption_2.text}</DecimaP>
-          </VideoCon>
+              <DecimaP>{data.video_caption_2.text}</DecimaP>
+            </VideoCon2>
+          ) : (
+            ""
+          )}
         </Grid16>
       </VideoConCon>
     );

@@ -2,7 +2,8 @@ import React, { useRef, useState, useEffect } from "react";
 import ReactDOM, { findDOMNode } from "react-dom";
 import { graphql, Link, useScrollRestoration } from "gatsby";
 import styled, { createGlobalStyle, keyframes } from "styled-components";
-import { withPreview } from "gatsby-source-prismic";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
 import { ImageOrientation } from "../components/utils/image-orientation";
 import { Helmet } from "react-helmet";
 import "../components/styles/index.css";
@@ -21,20 +22,12 @@ import { VideoComponentNoControls } from "../components/tf/zz/video-component-no
 import { Nav } from "../components/tf/nav";
 import { TwoImg } from "../components/tf/index_archive/two-img";
 import { FourImg } from "../components/tf/index_archive/four-img";
-import { TwoVid } from "../components/tf/index_archive/two-vid";
+// import { TwoVid } from "../components/tf/index_archive/two-vid";
 import { ProjectInfo } from "../components/tf/index_archive/project-info";
 import { Statement } from "../components/tf/index_archive/statement";
 import { Intro } from "../components/tf/index_archive/intro";
 import { SizzleVidComponent } from "../components/tf/index_archive/sizzle-vid";
 import { Contents } from "../components/tf/index_archive/contents";
-// import Plyr from "plyr";
-// import "plyr/dist/plyr.css";
-
-// import "../components/plyr-master/src/js/plyr.js";
-// import Plyr from "plyr-react";
-// import "plyr-react/dist/plyr.css";
-// import "plyr/src/js/plyr.js";
-// import plyr from "plyr";
 
 const Grid16 = styled.div`
   display: grid;
@@ -76,7 +69,7 @@ const ContentsCon = styled.div`
 `;
 
 const Archive = ({ data }) => {
-  console.log(data.prismicArchive.data.archive_relationship_group);
+  // console.log(data.prismicArchive.data.archive_relationship_group);
 
   const Contents = () => {
     const contents2 = data.prismicArchive.data.archive_relationship_group
@@ -124,13 +117,13 @@ const Archive = ({ data }) => {
             } else if (content_four.slice_type == "2ximg") {
               return <TwoImg data={content_four.primary} />;
             } else if (content_four.slice_type == "video") {
-              return <TwoVid data={content_four.primary} />;
+              // return <TwoVid data={content_four.primary} />;
             }
           }
         );
-        console.log(
-          content.archive_relationship_field.document.data.title.text
-        );
+        // console.log(
+        //   content.archive_relationship_field.document.data.title.text
+        // );
         return (
           <div id={content.archive_relationship_field.document.uid}>
             <ProjectInfo
@@ -162,7 +155,7 @@ const Archive = ({ data }) => {
   );
 };
 
-export default withPreview(Archive);
+export default withPrismicPreview(Archive);
 
 export const query = graphql`
   query MyQuery7 {
@@ -234,52 +227,32 @@ export const query = graphql`
                     text
                   }
                   body {
-                    ... on PrismicProjectBody4ximg {
+                    ... on PrismicProjectDataBody4ximg {
                       id
                       primary {
                         img1 {
-                          fluid {
-                            src
-                            srcSet
-                            srcSetWebp
-                            srcWebp
-                          }
+                          gatsbyImageData
                         }
                         img1_caption {
                           html
                           text
                         }
                         img2 {
-                          fluid {
-                            src
-                            srcSet
-                            srcSetWebp
-                            srcWebp
-                          }
+                          gatsbyImageData
                         }
                         img2_caption {
                           html
                           text
                         }
                         img3 {
-                          fluid {
-                            src
-                            srcSet
-                            srcSetWebp
-                            srcWebp
-                          }
+                          gatsbyImageData
                         }
                         img3_caption {
                           html
                           text
                         }
                         img4 {
-                          fluid {
-                            src
-                            srcSet
-                            srcSetWebp
-                            srcWebp
-                          }
+                          gatsbyImageData
                         }
                         img4_caption {
                           html
@@ -288,29 +261,19 @@ export const query = graphql`
                       }
                       slice_type
                     }
-                    ... on PrismicProjectBody2ximg {
+                    ... on PrismicProjectDataBody2ximg {
                       id
                       slice_type
                       primary {
                         img1 {
-                          fluid {
-                            src
-                            srcSet
-                            srcSetWebp
-                            srcWebp
-                          }
+                          gatsbyImageData
                         }
                         img1_caption {
                           html
                           text
                         }
                         img2 {
-                          fluid {
-                            src
-                            srcSet
-                            srcSetWebp
-                            srcWebp
-                          }
+                          gatsbyImageData
                         }
                         img2_caption {
                           html
@@ -318,7 +281,7 @@ export const query = graphql`
                         }
                       }
                     }
-                    ... on PrismicProjectBodyVideo {
+                    ... on PrismicProjectDataBodyVideo {
                       id
                       slice_type
                       primary {

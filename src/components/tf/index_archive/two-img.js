@@ -3,6 +3,7 @@ import ReactDOM, { findDOMNode } from "react-dom";
 import { graphql, Link, useScrollRestoration } from "gatsby";
 import styled, { createGlobalStyle, keyframes } from "styled-components";
 import { useMediaQuery } from "../media-query";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
 const Grid16 = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr /* 4 */ 1fr 1fr 1fr 1fr /* 8 */ 1fr 1fr 1fr 1fr /* 12 */ 1fr 1fr 1fr 1fr /* 16 */;
@@ -50,18 +51,25 @@ const DecimaPCon = styled.div`
 
 export const TwoImg = ({ data }) => {
   let isPageWide = useMediaQuery("(min-width: 667px)");
+  // console.log("DATA.IMG1");
+  // console.log(data.img1);
+  const img1 = getImage(data.img1);
+  const img2 = getImage(data.img2);
+  // console.log("IMG1");
+  // console.log(img1);
+
   if (isPageWide) {
     return (
       <TwoImgCon>
         <Grid16>
           <TwoImgImgCon>
-            {data.img1.fluid != null ? <img src={data.img1.fluid.src} /> : ""}
+            {img1 != undefined ? <GatsbyImage image={img1} /> : ""}
             <DecimaPCon>
               <p>{data.img1_caption.text}</p>
             </DecimaPCon>
           </TwoImgImgCon>
           <TwoImgImgCon>
-            {data.img2.fluid != null ? <img src={data.img2.fluid.src} /> : ""}
+            {img2 != undefined ? <GatsbyImage image={img2} /> : ""}
             <DecimaPCon>
               <p>{data.img2_caption.text}</p>
             </DecimaPCon>
@@ -73,9 +81,9 @@ export const TwoImg = ({ data }) => {
     return (
       <TwoImgCon>
         <Grid16>
-          {data.img1.fluid != null ? (
+          {img1 != undefined ? (
             <TwoImgImgCon>
-              <img src={data.img1.fluid.src} />
+              <GatsbyImage image={img1} />
               <DecimaPCon>
                 <p>{data.img1_caption.text}</p>
               </DecimaPCon>
@@ -83,9 +91,9 @@ export const TwoImg = ({ data }) => {
           ) : (
             ""
           )}
-          {data.img2.fluid != null ? (
+          {img2 != undefined ? (
             <TwoImgImgCon>
-              <img src={data.img2.fluid.src} />
+              <GatsbyImage image={img2} />
               <DecimaPCon>
                 <p>{data.img2_caption.text}</p>
               </DecimaPCon>

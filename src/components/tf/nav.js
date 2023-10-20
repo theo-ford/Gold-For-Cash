@@ -143,18 +143,21 @@ const ESTCon = styled.div`
   }
 `;
 export const Nav = ({}) => {
-  console.log("GIT BEFORE NPM");
   var [currentPage, setCurrentPage] = useState(null);
 
   useEffect(() => {
     var inputString = window.location.href;
-    var outputString = inputString.replace(/.*\//, "");
-    if (outputString == "") {
-      setCurrentPage("index");
-    } else if (outputString == "archive") {
+    // console.log("inputString");
+    // console.log(inputString);
+    var outputString = inputString.match(/\/([^/]+)\/?$/)[1];
+    // console.log("outputString");
+    // console.log(outputString);
+    if (outputString == "archive") {
       setCurrentPage(outputString);
     } else if (outputString == "about") {
       setCurrentPage(outputString);
+    } else {
+      setCurrentPage("index");
     }
   }, [setCurrentPage]);
 
@@ -208,7 +211,6 @@ export const Nav = ({}) => {
     .splice(0, 2);
   const berlinResult = berlinSplitted.join(":");
 
-  console.log("remove luxon");
   return (
     <>
       <NavCon>

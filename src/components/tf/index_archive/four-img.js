@@ -3,6 +3,8 @@ import ReactDOM, { findDOMNode } from "react-dom";
 import { graphql, Link, useScrollRestoration } from "gatsby";
 import styled, { createGlobalStyle, keyframes } from "styled-components";
 import { useMediaQuery } from "../media-query";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+
 const Grid16 = styled.div`
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr /* 4 */ 1fr 1fr 1fr 1fr /* 8 */ 1fr 1fr 1fr 1fr /* 12 */ 1fr 1fr 1fr 1fr /* 16 */;
@@ -49,30 +51,34 @@ const DecimaPCon = styled.div`
 
 export const FourImg = ({ data }) => {
   let isPageWide = useMediaQuery("(min-width: 667px)");
+  const img1 = getImage(data.img1);
+  const img2 = getImage(data.img2);
+  const img3 = getImage(data.img3);
+  const img4 = getImage(data.img4);
   if (isPageWide) {
     return (
       <FourImgCon>
         <Grid16>
           <FourImgImgCon>
-            {data.img1.fluid != null ? <img src={data.img1.fluid.src} /> : ""}
+            {img1 != undefined ? <GatsbyImage image={img1} /> : ""}
             <DecimaPCon>
               <p>{data.img1_caption.text}</p>
             </DecimaPCon>
           </FourImgImgCon>
           <FourImgImgCon>
-            {data.img2.fluid != null ? <img src={data.img2.fluid.src} /> : ""}
+            {img2 != undefined ? <GatsbyImage image={img2} /> : ""}
             <DecimaPCon>
               <p>{data.img2_caption.text}</p>
             </DecimaPCon>
           </FourImgImgCon>
           <FourImgImgCon>
-            {data.img3.fluid != null ? <img src={data.img3.fluid.src} /> : ""}
+            {img3 != undefined ? <GatsbyImage image={img3} /> : ""}
             <DecimaPCon>
               <p>{data.img3_caption.text}</p>
             </DecimaPCon>
           </FourImgImgCon>
           <FourImgImgCon>
-            {data.img4.fluid != null ? <img src={data.img4.fluid.src} /> : ""}
+            {img4 != undefined ? <GatsbyImage image={img4} /> : ""}
             <DecimaPCon>
               <p>{data.img4_caption.text}</p>
             </DecimaPCon>
@@ -84,9 +90,9 @@ export const FourImg = ({ data }) => {
     return (
       <FourImgCon>
         <Grid16>
-          {data.img1.fluid != null ? (
+          {img1 != undefined ? (
             <FourImgImgCon>
-              <img src={data.img1.fluid.src} />
+              <GatsbyImage image={img1} />
               <DecimaPCon>
                 <p>{data.img1_caption.text}</p>
               </DecimaPCon>
@@ -94,9 +100,9 @@ export const FourImg = ({ data }) => {
           ) : (
             ""
           )}
-          {data.img2.fluid != null ? (
+          {img2 != undefined ? (
             <FourImgImgCon>
-              <img src={data.img2.fluid.src} />
+              <GatsbyImage image={img2} />
               <DecimaPCon>
                 <p>{data.img2_caption.text}</p>
               </DecimaPCon>
@@ -104,9 +110,9 @@ export const FourImg = ({ data }) => {
           ) : (
             ""
           )}
-          {data.img3.fluid != null ? (
+          {img3 != undefined ? (
             <FourImgImgCon>
-              <img src={data.img3.fluid.src} />
+              <GatsbyImage image={img3} />
               <DecimaPCon>
                 <p>{data.img3_caption.text}</p>
               </DecimaPCon>
@@ -114,9 +120,9 @@ export const FourImg = ({ data }) => {
           ) : (
             ""
           )}
-          {data.img4.fluid != null ? (
+          {img4 != undefined ? (
             <FourImgImgCon>
-              <img src={data.img4.fluid.src} />
+              <GatsbyImage image={img4} />
               <DecimaPCon>
                 <p>{data.img4_caption.text}</p>
               </DecimaPCon>

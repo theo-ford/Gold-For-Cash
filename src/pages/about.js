@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql, Link } from "gatsby";
-import { withPreview } from "gatsby-source-prismic";
+import { GatsbyImage, getImage } from "gatsby-plugin-image";
+import { withPrismicPreview } from "gatsby-plugin-prismic-previews";
 import styled, { createGlobalStyle } from "styled-components";
 // import { NavSelected } from "../components/tf/nav-selected";
 import { AnimationFixed1 } from "../components/tf/animation-fixed-1";
@@ -132,8 +133,13 @@ const AwardsCon = styled.div`
     grid-column: span 4;
   }
 `;
-
+const CaptionCon = styled.div`
+  margin-top: 5px;
+`;
 const About = ({ data }) => {
+  const portraitImg = getImage(data.prismicAbout.data.portrait);
+  const logosImg = getImage(data.prismicAbout.data.logos_gif);
+  const awardsImg = getImage(data.prismicAbout.data.awards_img);
   return (
     <>
       <PageCon>
@@ -174,24 +180,35 @@ const About = ({ data }) => {
         <PortraitConCon>
           <Grid16>
             <PortraitCon>
-              <img src={data.prismicAbout.data.portrait.fluid.src} />
-              <DecimaP>{data.prismicAbout.data.portrait_caption.text}</DecimaP>
+              <GatsbyImage image={portraitImg} />
+              <CaptionCon>
+                {" "}
+                <DecimaP>
+                  {data.prismicAbout.data.portrait_caption.text}
+                </DecimaP>
+              </CaptionCon>
             </PortraitCon>
           </Grid16>
         </PortraitConCon>
         <LogosConCon>
           <Grid16>
             <LogosCon>
-              <img src={data.prismicAbout.data.logos_gif.fluid.src} />
-              <DecimaP>{data.prismicAbout.data.logos_gif_caption.text}</DecimaP>
+              <GatsbyImage image={logosImg} />
+              <CaptionCon>
+                <DecimaP>
+                  {data.prismicAbout.data.logos_gif_caption.text}
+                </DecimaP>
+              </CaptionCon>
             </LogosCon>
           </Grid16>
         </LogosConCon>
         <AwardsConCon>
           <Grid16>
             <AwardsCon>
-              <img src={data.prismicAbout.data.awards_img.fluid.src} />
-              <DecimaP>{data.prismicAbout.data.awards_caption.text}</DecimaP>
+              <GatsbyImage image={awardsImg} />
+              <CaptionCon>
+                <DecimaP>{data.prismicAbout.data.awards_caption.text}</DecimaP>
+              </CaptionCon>
             </AwardsCon>
           </Grid16>
         </AwardsConCon>
@@ -202,7 +219,7 @@ const About = ({ data }) => {
     </>
   );
 };
-export default withPreview(About);
+export default withPrismicPreview(About);
 
 export const query = graphql`
   query MyQuery {
@@ -221,33 +238,21 @@ export const query = graphql`
           text
         }
         logos_gif {
-          fluid {
-            src
-            srcSet
-            srcSetWebp
-          }
+          gatsbyImageData
         }
         logos_gif_caption {
           html
           text
         }
         portrait {
-          fluid {
-            src
-            srcSetWebp
-            srcWebp
-          }
+          gatsbyImageData
         }
         portrait_caption {
           html
           text
         }
         awards_img {
-          fluid {
-            src
-            srcSetWebp
-            srcWebp
-          }
+          gatsbyImageData
         }
         awards_caption {
           html
