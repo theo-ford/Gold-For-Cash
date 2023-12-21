@@ -28,6 +28,7 @@ import { Statement } from "../components/tf/index_archive/statement";
 import { Intro } from "../components/tf/index_archive/intro";
 import { SizzleVidComponent } from "../components/tf/index_archive/sizzle-vid";
 import { Contents } from "../components/tf/index_archive/contents";
+import { TwoVid } from "../components/tf/index_archive/two-vid";
 
 const Grid16 = styled.div`
   display: grid;
@@ -123,6 +124,7 @@ const Archive = ({ data }) => {
               return <TwoImg data={content_four.primary} />;
             } else if (content_four.slice_type == "video") {
               // return <TwoVid data={content_four.primary} />;
+              return <TwoVid data={content_four.primary} />;
             }
           }
         );
