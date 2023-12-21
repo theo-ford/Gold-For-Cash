@@ -45,7 +45,12 @@ const ProjectsCon = styled.div`
   float: left;
   width: 100%;
 `;
-
+const UIDWrapper = styled.div`
+  height: auto;
+  width: 100%;
+  float: left;
+  display: block;
+`;
 const PageContentCon = styled.div`
   position: absolute;
   top: 0;
@@ -113,12 +118,12 @@ const Index = ({ data }) => {
           }
         );
         return (
-          <div id={content.project_relationship_field.document.uid}>
+          <UIDWrapper id={content.project_relationship_field.document.uid}>
             <ProjectInfo
               data={content.project_relationship_field.document}
             ></ProjectInfo>
             {project}
-          </div>
+          </UIDWrapper>
         );
       }
       if (content.project_relationship_field.document.type == "statement") {
