@@ -45,7 +45,12 @@ const ProjectsCon = styled.div`
   float: left;
   width: 100%;
 `;
-
+const UIDWrapper = styled.div`
+  height: auto;
+  width: 100%;
+  float: left;
+  display: block;
+`;
 const PageContentCon = styled.div`
   position: absolute;
   top: 0;
@@ -125,12 +130,12 @@ const Archive = ({ data }) => {
         //   content.archive_relationship_field.document.data.title.text
         // );
         return (
-          <div id={content.archive_relationship_field.document.uid}>
+          <UIDWrapper id={content.archive_relationship_field.document.uid}>
             <ProjectInfo
               data={content.archive_relationship_field.document}
             ></ProjectInfo>
             {project}
-          </div>
+          </UIDWrapper>
         );
       }
       if (content.archive_relationship_field.document.type == "statement") {
