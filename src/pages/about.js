@@ -6,6 +6,7 @@ import styled, { createGlobalStyle } from "styled-components";
 // import { NavSelected } from "../components/tf/nav-selected";
 import { AnimationFixed1 } from "../components/tf/animation-fixed-1";
 import { Nav } from "../components/tf/nav";
+import { Helmet } from "react-helmet";
 
 const Grid16 = styled.div`
   display: grid;
@@ -142,6 +143,9 @@ const About = ({ data }) => {
   const awardsImg = getImage(data.prismicAbout.data.awards_img);
   return (
     <>
+      <Helmet>
+        <title>Gold For Cash</title>
+      </Helmet>
       <PageCon>
         <BioConCon>
           <Grid16>

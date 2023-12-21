@@ -143,6 +143,9 @@ const Archive = ({ data }) => {
 
   return (
     <>
+      <Helmet>
+        <title>Gold For Cash</title>
+      </Helmet>
       <PageContentCon>
         <SizzleVidComponent data={data.prismicHomepage.data} />
         <Intro data={data.prismicHomepage.data} />

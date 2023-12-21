@@ -21,6 +21,8 @@ const VideoConCon = styled.div`
   margin-left: 10px;
   margin-top: 100px;
   margin-bottom: 100px;
+  float: left;
+  display: block;
 
   @media (max-width: 666px) {
     /* grid-column: span 4; */

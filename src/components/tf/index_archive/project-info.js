@@ -20,7 +20,9 @@ const ProjectInfoCon = styled.div`
   width: calc(100% - 20px);
   margin-left: 10px;
   margin-top: 100px;
-  margin-bottom: 100px;
+  /* margin-bottom: 100px; */
+  /* float: left;
+  display: block; */
   @media (max-width: 666px) {
     /* width: calc(100% - 10px);
     margin-left: 5px; */
