@@ -160,7 +160,7 @@ const Archive = ({ data }) => {
         <Contents />
         <ProjectsCon>{archive}</ProjectsCon>
       </PageContentCon>
-      <AnimationFixed1></AnimationFixed1>
+      {/* <AnimationFixed1></AnimationFixed1> */}
     </>
   );
 };

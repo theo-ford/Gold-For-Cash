@@ -145,7 +145,7 @@ const Index = ({ data }) => {
         <Contents data={data.prismicHomepage.data.project_relationship_group} />
         <ProjectsCon>{overview}</ProjectsCon>
       </PageContentCon>
-      <AnimationFixed1></AnimationFixed1>
+      {/* <AnimationFixed1></AnimationFixed1> */}
     </>
   );
 };

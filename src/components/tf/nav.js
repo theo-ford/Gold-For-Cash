@@ -251,11 +251,11 @@ export const Nav = ({}) => {
                 <DecimaP>LinkedIn</DecimaP>
               </Link>
             </>
-            <>
+            {/* <>
               <Link to={data.prismicAbout.data.twitter.url}>
                 <DecimaP>X</DecimaP>
               </Link>
-            </>
+            </> */}
           </SocialsLinksCon>
           <PageLinksCon>
             <PageLinks>
