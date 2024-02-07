@@ -109,6 +109,7 @@ const MobileContactCon = styled.div`
     letter-spacing: -0.4px;
     line-height: 112.5%;
     /* margin-bottom: 20px; */
+    text-decoration: none;
   }
 
   @media (max-width: 666px) {
