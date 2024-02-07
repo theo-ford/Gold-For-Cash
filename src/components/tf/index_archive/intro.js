@@ -29,7 +29,7 @@ const AboutCon = styled.div`
 
 const SmallAboutP = styled.p`
   font-family: "DecimaMonoPro", sans-serif;
-  font-size: 10px !important;
+  font-size: 12px !important;
   letter-spacing: -2%;
 `;
 
