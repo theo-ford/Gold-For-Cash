@@ -59,6 +59,11 @@ const DecimaP = styled.div`
   font-family: "DecimaMonoPro", sans-serif;
   font-size: 12px;
   letter-spacing: -2%;
+  a {
+    font-family: "DecimaMonoPro", sans-serif;
+    font-size: 12px;
+    letter-spacing: -2%;
+  }
 `;
 const AddressTitleCon = styled.div`
   grid-column: span 1;
@@ -221,7 +226,11 @@ export const Nav = ({}) => {
             <DecimaP>Phone:</DecimaP>
           </ContactTitleCon>
           <ContactInfoCon>
-            <DecimaP>{data.prismicAbout.data.email.text}</DecimaP>
+            <DecimaP>
+              <a href={`mailto:${data.prismicAbout.data.email.text}`}>
+                {data.prismicAbout.data.email.text}
+              </a>
+            </DecimaP>
             <DecimaP>{data.prismicAbout.data.web.text}</DecimaP>
             <DecimaP>{data.prismicAbout.data.phone.text}</DecimaP>
           </ContactInfoCon>
@@ -261,9 +270,9 @@ export const Nav = ({}) => {
             <PageLinks>
               <Link to="/">
                 {currentPage == "index" ? (
-                  <span>(Selected)</span>
+                  <span>(Work)</span>
                 ) : (
-                  <span>Selected</span>
+                  <span>Work</span>
                 )}
               </Link>
             </PageLinks>
@@ -279,9 +288,9 @@ export const Nav = ({}) => {
             <PageLinks>
               <Link to="/archive">
                 {currentPage == "archive" ? (
-                  <span>(Archive)</span>
+                  <span>(More)</span>
                 ) : (
-                  <span>Archive</span>
+                  <span>More</span>
                 )}
               </Link>
             </PageLinks>

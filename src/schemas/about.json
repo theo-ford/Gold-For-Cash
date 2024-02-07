@@ -59,14 +59,14 @@
     "clients": {
       "type": "StructuredText",
       "config": {
-        "multi": "hyperlink, list-item",
+        "multi": "hyperlink,list-item",
         "label": "Clients"
       }
     },
     "agencies": {
       "type": "StructuredText",
       "config": {
-        "multi": "hyperlink, list-item",
+        "multi": "hyperlink,list-item",
         "label": "Agencies"
       }
     },
@@ -113,6 +113,21 @@
       "config": {
         "single": "paragraph,hyperlink",
         "label": "Awards Caption"
+      }
+    },
+    "additional_img_1": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Additional Img 1"
+      }
+    },
+    "additional_img_1_caption": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph",
+        "label": "Additional Img 1 Caption"
       }
     }
   }

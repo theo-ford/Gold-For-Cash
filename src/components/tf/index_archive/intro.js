@@ -23,16 +23,13 @@ const IntroCon = styled.div`
     display: none;
   }
 `;
-const ClientsCon = styled.div`
-  grid-column: 9 / span 2;
-`;
 const AboutCon = styled.div`
-  grid-column: span 6;
+  grid-column: 9 / span 8;
 `;
 
 const SmallAboutP = styled.p`
   font-family: "DecimaMonoPro", sans-serif;
-  font-size: 6px !important;
+  font-size: 10px !important;
   letter-spacing: -2%;
 `;
 
@@ -40,9 +37,6 @@ export const Intro = ({ data }) => {
   return (
     <IntroCon>
       <Grid16>
-        <ClientsCon>
-          <SmallAboutP> {data.clients.text}</SmallAboutP>
-        </ClientsCon>
         <AboutCon>
           <SmallAboutP>{data.short_intro.text}</SmallAboutP>
         </AboutCon>

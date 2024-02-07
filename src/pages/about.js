@@ -88,6 +88,38 @@ const AgenciesCon = styled.div`
     grid-column: span 2;
   }
 `;
+const MobileContactConCon = styled.div`
+  width: calc(100% - 20px);
+  margin: 10px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  display: none;
+  @media (max-width: 666px) {
+    display: block;
+  }
+`;
+const MobileContactCon = styled.div`
+  grid-column: 9 / span 8;
+
+  p,
+  a {
+    font-family: "Helvetica Neue LT Pro", sans-serif;
+    font-size: 32px;
+    font-weight: bold;
+    letter-spacing: -0.4px;
+    line-height: 112.5%;
+    /* margin-bottom: 20px; */
+  }
+
+  @media (max-width: 666px) {
+    grid-column: span 4;
+    /* margin-top: 200px; */
+    p,
+    a {
+      font-size: 24px;
+    }
+  }
+`;
 
 const PortraitConCon = styled.div`
   width: calc(100% - 20px);
@@ -137,10 +169,27 @@ const AwardsCon = styled.div`
 const CaptionCon = styled.div`
   margin-top: 5px;
 `;
+
+const AdditionalImg1ConCon = styled.div`
+  width: calc(100% - 20px);
+  margin: 10px;
+`;
+
+const AdditionalImg1Con = styled.div`
+  grid-column: 9 / span 8;
+  margin-bottom: 150px;
+  img {
+    margin-bottom: 10px;
+  }
+  @media (max-width: 666px) {
+    grid-column: span 4;
+  }
+`;
 const About = ({ data }) => {
   const portraitImg = getImage(data.prismicAbout.data.portrait);
   const logosImg = getImage(data.prismicAbout.data.logos_gif);
   const awardsImg = getImage(data.prismicAbout.data.awards_img);
+  const additionalImg1 = getImage(data.prismicAbout.data.additional_img_1);
   return (
     <>
       <Helmet>
@@ -181,6 +230,35 @@ const About = ({ data }) => {
             </AgenciesCon>
           </Grid16>
         </ListsConCon>
+        <MobileContactConCon>
+          <Grid16>
+            <MobileContactCon>
+              <DecimaP style={{ marginBottom: "10px" }}>Contact</DecimaP>
+              <p>
+                <a href={`mailto:${data.prismicAbout.data.email.text}`}>
+                  {data.prismicAbout.data.email.text}
+                </a>
+              </p>
+              <p>{data.prismicAbout.data.web.text}</p>
+              <p>{data.prismicAbout.data.phone.text}</p>
+              <br></br>
+              <DecimaP style={{ marginBottom: "10px" }}>Address</DecimaP>
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: data.prismicAbout.data.address.html,
+                }}
+              />
+              <br></br>
+              <DecimaP style={{ marginBottom: "10px" }}>Social</DecimaP>
+              <Link to={data.prismicAbout.data.instagram.url}>
+                <p>Instagram</p>
+              </Link>
+              <Link to={data.prismicAbout.data.linked_in.url}>
+                <p>LinkedIn</p>
+              </Link>
+            </MobileContactCon>
+          </Grid16>
+        </MobileContactConCon>
         <PortraitConCon>
           <Grid16>
             <PortraitCon>
@@ -216,6 +294,19 @@ const About = ({ data }) => {
             </AwardsCon>
           </Grid16>
         </AwardsConCon>
+
+        <AdditionalImg1ConCon>
+          <Grid16>
+            <AdditionalImg1Con>
+              <GatsbyImage image={additionalImg1} />
+              <CaptionCon>
+                <DecimaP>
+                  {data.prismicAbout.data.additional_img_1_caption.text}
+                </DecimaP>
+              </CaptionCon>
+            </AdditionalImg1Con>
+          </Grid16>
+        </AdditionalImg1ConCon>
       </PageCon>
 
       <Nav></Nav>
@@ -261,6 +352,35 @@ export const query = graphql`
         awards_caption {
           html
           text
+        }
+        additional_img_1 {
+          gatsbyImageData
+        }
+        additional_img_1_caption {
+          html
+          text
+        }
+        address {
+          text
+          html
+        }
+        email {
+          text
+        }
+        phone {
+          text
+        }
+        web {
+          text
+        }
+        instagram {
+          url
+        }
+        twitter {
+          url
+        }
+        linked_in {
+          url
         }
       }
     }
