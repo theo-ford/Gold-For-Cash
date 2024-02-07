@@ -195,6 +195,7 @@ const About = ({ data }) => {
     <>
       <Helmet>
         <title>Gold For Cash</title>
+        <meta name="format-detection" content="telephone=no" />
       </Helmet>
       <PageCon>
         <BioConCon>
