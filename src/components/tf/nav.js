@@ -270,9 +270,9 @@ export const Nav = ({}) => {
             <PageLinks>
               <Link to="/">
                 {currentPage == "index" ? (
-                  <span>(Work)</span>
+                  <span>(Selected)</span>
                 ) : (
-                  <span>Work</span>
+                  <span>Selected</span>
                 )}
               </Link>
             </PageLinks>
@@ -288,9 +288,9 @@ export const Nav = ({}) => {
             <PageLinks>
               <Link to="/archive">
                 {currentPage == "archive" ? (
-                  <span>(More)</span>
+                  <span>(Archive)</span>
                 ) : (
-                  <span>More</span>
+                  <span>Archive</span>
                 )}
               </Link>
             </PageLinks>
